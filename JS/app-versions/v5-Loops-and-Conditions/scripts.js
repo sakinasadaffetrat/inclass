@@ -8,11 +8,11 @@ var todoList = {
     {
       textTodo: "First",
       completed: true
-    }, 
+    },
     {
       textTodo: "Second",
       completed: false
-    }, 
+    },
     {
       textTodo: "Third",
       completed: false
@@ -26,53 +26,67 @@ var todoList = {
 
   /* DISPLAY TODOS
   --------------------------------------*/
-  displayTodos: function() {
+  displayTodos: function () {
 
-    for(let i = 0; i < this.todos.length; i++){
+    //Start Loop
+    for (let i = 0; i < this.todos.length; i++) {
 
       var myItem = this.todos[i];
       var x = ' ';
 
-      if(myItem.completed) {
+      if (myItem.completed) {
         x = 'x';
       }
       var showItem = '(' + x + ') ' + myItem.textTodo;
       console.log("showItem: ", showItem);
-    
-    }
+
+    } // End loop
+
+    console.log("-------------------------");
 
   },
 
 
   /* ADD TODO
   --------------------------------------*/
-  addTodo: function(text) {
-    debugger;
-    this.todos.push(text);
+  addTodo: function (text) {
+    //debugger;
+    this.todos.textTodo.push(text);
     this.displayTodos();
   },
 
 
   /* CHANGE TODO
-  --------------------------------------*/
-  changeTodo: function(index, text) {
-    this.todos[index] = text;
+    --------------------------------------*/
+  changeTodo: function (index, text) {
+    this.todos[index].textTodo = text;
     this.displayTodos();
   },
 
 
   /* DELETE TODO
   --------------------------------------*/
-  deleteTodo: function(index) {
+  deleteTodo: function (index) {
     this.todos.splice(index, 1);
+    this.displayTodos();
+  },
+
+
+  /* TOGGLE COMPLETED KEY VALUE OF AN ITEM
+  --------------------------------------*/
+  toggleCompleted: function(index) {
+    let item = this.todos[index];
+    item.completed = ! item.completed;
+
     this.displayTodos();
   }
 
-   
+
 };
 
 todoList.displayTodos();
-
+todoList.toggleCompleted(3);
+todoList.toggleCompleted(0);
 
 
 // i = i + 1; //i++
