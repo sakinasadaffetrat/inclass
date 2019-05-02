@@ -54,7 +54,10 @@ var todoList = {
   --------------------------------------*/
   addTodo: function (text) {
     //debugger;
-    this.todos.textTodo.push(text);
+    this.todos.push({
+      textTodo: text,
+      completed: false
+    });
     this.displayTodos();
   },
 
@@ -130,14 +133,11 @@ var handlers = {
   addTodo: function() {
 
     var addTodoInput = document.getElementById("addTodoInput");
- 
-    //console.log(addTodoInput.value);
-
     todoList.addTodo(addTodoInput.value);
 
   }
 
-}
+};
 
 
 
