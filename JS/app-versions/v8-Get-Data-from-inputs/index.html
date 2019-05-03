@@ -21,17 +21,17 @@
   <p>
     <input type="number" min="0" id="changeTodoIndexInput" placeholder="Index...">
     <input type="text" id="changeTodoInput" placeholder="Text...">
-    <button onclick="">Change Todo</button>
+    <button onclick="handlers.changeTodo()">Change Todo</button>
   </p>
 
   <p>
     <input type="number" min="0" id="deleteTodoIndexInput" placeholder="Index...">
-    <button onclick="">Delete Todo</button>
+    <button onclick="handlers.deleteTodo()">Delete Todo</button>
   </p>
 
   <p>
     <input type="number" min="0" id="toggleTodoIndexInput" placeholder="Index...">
-    <button onclick="">Toggle Todo</button>
+    <button onclick="handlers.toggleCompleted()">Toggle Todo</button>
   </p>
 
   <script src="scripts.js"></script>

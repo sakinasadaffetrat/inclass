@@ -27,38 +27,13 @@ var todoList = {
   ],
 
 
-  /* DISPLAY TODOS
-  --------------------------------------*/
-  displayTodos: function () {
-
-    //Start Loop
-    for (let i = 0; i < this.todos.length; i++) {
-
-      var myItem = this.todos[i];
-      var x = ' ';
-
-      if (myItem.completed) {
-        x = 'x';
-      }
-      var showItem = '(' + x + ') ' + myItem.textTodo;
-      console.log("showItem: ", showItem);
-
-    } // End loop
-
-    console.log("-------------------------");
-
-  },
-
-
   /* ADD TODO
   --------------------------------------*/
   addTodo: function (text) {
-    //debugger;
     this.todos.push({
       textTodo: text,
       completed: false
     });
-    this.displayTodos();
   },
 
 
@@ -66,7 +41,6 @@ var todoList = {
     --------------------------------------*/
   changeTodo: function (index, text) {
     this.todos[index].textTodo = text;
-    this.displayTodos();
   },
 
 
@@ -74,7 +48,6 @@ var todoList = {
   --------------------------------------*/
   deleteTodo: function (index) {
     this.todos.splice(index, 1);
-    this.displayTodos();
   },
 
 
@@ -83,8 +56,6 @@ var todoList = {
   toggleCompleted: function(index) {
     let item = this.todos[index];
     item.completed = ! item.completed;
-
-    this.displayTodos();
   },
 
 
@@ -116,7 +87,6 @@ var todoList = {
 			}
 		}
 
-		this.displayTodos();
 
 	} //End toggleAll() method
 
@@ -133,34 +103,89 @@ var handlers = {
   addTodo: function() {
     var addTodoInput = document.getElementById("addTodoInput");
     todoList.addTodo(addTodoInput.value);
+
+    addTodoInput.value = '';
+
+    view.displayTodos();
   },
 
   changeTodo: function() {
     var changeTodoIndexInput = document.getElementById("changeTodoIndexInput");
     var changeTodoInput = document.getElementById("changeTodoInput");
 
-    //console.log(parseInt(changeTodoIndexInput.value));
-
-    //parseInt(changeTodoInput.value) //convert to a number
     todoList.changeTodo(
       changeTodoIndexInput.valueAsNumber, 
       changeTodoInput.value
     );
+
+    changeTodoIndexInput.value = '';
+    changeTodoInput.value = '';
+
+    view.displayTodos();
   },
 
   deleteTodo: function() {
     var deleteTodoIndexInput = document.getElementById("deleteTodoIndexInput");
 
     todoList.deleteTodo(deleteTodoIndexInput.valueAsNumber);
+
+    deleteTodoIndexInput.value = '';
+
+    view.displayTodos();
   },
 
   toggleCompleted: function() {
     var toggleTodoIndexInput = document.getElementById("toggleTodoIndexInput");
 
     todoList.toggleCompleted(toggleTodoIndexInput.valueAsNumber);
+
+    view.displayTodos();
   }
 
 };
+
+
+/**
+ * VIEW OBJECT
+ * Methods to VIEW THE DOM ELEMENTS
+ */
+var view = {
+
+  displayTodos: function() {
+
+    const todoUL = document.querySelector("ul");
+    todoUL.innerHTML = '';
+
+    //START LOOP
+    for(let i = 0; i < todoList.todos.length; i++) {
+
+      //TODO item
+      let todo = todoList.todos[i];
+
+      //Completed string
+      let x = '( ) ';
+
+      if(todo.completed === true) {
+        x = '(x) ';
+      }
+
+      //Put together completed state and the text
+      let displayTodoItem = x + todo.textTodo;
+
+      //CREATE LI ELEMENT
+      let todoLi = document.createElement('li');
+      todoLi.textContent = displayTodoItem;
+
+      //APPEND THE LI TO THE UL LIST
+      todoUL.appendChild(todoLi);
+
+    } //END LOOP
+
+  }
+
+};
+
+view.displayTodos();
 
 
 
