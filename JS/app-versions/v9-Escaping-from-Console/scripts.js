@@ -42,6 +42,7 @@ var todoList = {
   changeTodo: function (index, text) {
     this.todos[index].textTodo = text;
   },
+  
 
 
   /* DELETE TODO
