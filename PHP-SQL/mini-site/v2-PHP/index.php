@@ -1,7 +1,16 @@
 <?php
-$get = $_GET['page'];
+ini_set('display_errors', 1);
+error_reporting(E_ALL & ~E_NOTICE);
+ 
+$get_page = $_GET['page'];
 
-$html_page = file_get_contents('html/' .$get. '.html');
+if(empty($get_page)) {
+  $get_page = 'index';
+}
+
+echo $get_page;
+
+$html_page = file_get_contents('html/'.$get_page.'.html');
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,7 +64,7 @@ $html_page = file_get_contents('html/' .$get. '.html');
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- FOOTER -- >
   <footer class="footer">
     <p>&copy;1998 - <?php echo date('Y'); ?> - Heavy Metal Company</p>
   </footer>
