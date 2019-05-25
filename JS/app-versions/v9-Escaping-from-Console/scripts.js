@@ -42,6 +42,7 @@ var todoList = {
   changeTodo: function (index, text) {
     this.todos[index].textTodo = text;
   },
+  
 
 
   /* DELETE TODO
@@ -151,37 +152,52 @@ var handlers = {
  */
 var view = {
 
-  displayTodos: function() {
+	/* DISPLAY TODOs
+	-----------------------------------*/
+	displayTodos: function () {
 
-    const todoUL = document.querySelector("ul");
-    todoUL.innerHTML = '';
+		//Get DOM ul
+		const todoUl = document.querySelector('ul');
+		todoUl.innerHTML = '';
 
-    //START LOOP
-    for(let i = 0; i < todoList.todos.length; i++) {
+		//LOOP into todos
+		for (let i = 0; i < todoList.todos.length; i++) {
 
-      //TODO item
-      let todo = todoList.todos[i];
+			//1. Grab the todo object from the todos array
+			let todo = todoList.todos[i];
 
-      //Completed string
-      let x = '( ) ';
+			//2. Define completed string
+			let x = '( ) '; //default value; you can use &nbsp;&nbsp; to put 2 spaces
 
-      if(todo.completed === true) {
-        x = '(x) ';
-      }
+			if (todo.completed === true) {
+				x = '(x) ';
+			}
 
-      //Put together completed state and the text
-      let displayTodoItem = x + todo.textTodo;
+			//3. Item text display
+			let todoTextWithCompletion = i + '. ' + x + todo.todoText;
 
-      //CREATE LI ELEMENT
-      let todoLi = document.createElement('li');
-      todoLi.textContent = displayTodoItem;
+			//4. Create li element
+			let todoLi = document.createElement('li');
 
-      //APPEND THE LI TO THE UL LIST
-      todoUL.appendChild(todoLi);
+			
 
-    } //END LOOP
+			//5. Put the text display inside li
+			todoLi.textContent = todoTextWithCompletion; //use .innerHTML if using &nbsp;&nbsp; above
 
-  }
+			//6. Create the button element 
+			const deleteBtn = document.createElement('button');
+			deleteBtn.setAttribute('id', i);
+			deleteBtn.textContent = 'X';
+			
+			//7. Append the button to the <li>
+			todoLi.appendChild(deleteBtn);
+
+			//6. Append li to the ul list
+			todoUl.appendChild(todoLi);
+
+		} //End Loop
+
+	} //End displayTodos() method
 
 };
 
