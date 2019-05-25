@@ -1,22 +1,28 @@
 <?php
-<<<<<<< HEAD
-$get = $_GET['page'];
-
-$html_page = file_get_contents('html/' .$get. '.html');
-=======
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
  
-$get_page = $_GET['page'];
+// $get_page = $_GET['page'];
 
-if(empty($get_page)) {
-  $get_page = 'index';
-}
+// if(empty($get_page)) {
+//   $get_page = 'index';
+// }
+
+//$get_page = isset($_GET['page']) ? $_GET['page'] : 'index';
+
+//PHP7
+$get_page = $_GET['page'] ?? 'index';
 
 //echo $get_page;
 
-$html_page = file_get_contents('html/'.$get_page.'.html');
->>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
+$html_file_path = 'html/'.$get_page.'.html'; 
+
+if(file_exists($html_file_path)) {
+  $html_page = file_get_contents($html_file_path);
+}
+else {
+  $html_page = '404. The page you are looking for in not here.';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +58,7 @@ $html_page = file_get_contents('html/'.$get_page.'.html');
         <li class="menu-item active"><a href="?page=index">HOME</a></li>
         <li class="menu-item"><a href="?page=work">WORK</a></li>
         <li class="menu-item"><a href="?page=contact">CONTACT</a></li>
+        <li class="menu-item"><a href="?page=bob">BOB</a></li>
       </ul>
     </nav>
 
@@ -62,11 +69,7 @@ $html_page = file_get_contents('html/'.$get_page.'.html');
   <main class="content">
 
     <!-- Main Title -->
-<<<<<<< HEAD
-    <h1 class="main-title">This is the PLACEHOLDER for the TITLE !!!</h1>
-=======
     <h1 class="main-title">This is the PLACEHOLDER for the TITLE</h1>
->>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
 
     <!-- HTML content -->
     <?php echo $html_page; ?>
@@ -74,11 +77,7 @@ $html_page = file_get_contents('html/'.$get_page.'.html');
   </main>
 
 
-<<<<<<< HEAD
-  <!-- FOOTER -->
-=======
   <!-- FOOTER -- >
->>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
   <footer class="footer">
     <p>&copy;1998 - <?php echo date('Y'); ?> - Heavy Metal Company</p>
   </footer>
