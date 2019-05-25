@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Le SVG dans l'HTML</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles-START.css">
+
+    <style>
+      #logo {
+        width: 100%;
+      }
+
+      .svg-bg {
+        background-image: url(img/heavy-metal-logo.svg)
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <main>
+      <h1>LE SVG dans l'HTML</h1>
+
+      <section id="section-1">
+        <h2>Directement dans le code</h2>
+        <figure class="svg-wrap svg-code">
+          <!-- votre svg ici -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+            <path fill="#fff" d="M-1-1h102v102H-1z"/>
+            <g>
+              <g stroke="null">
+                <ellipse cx="49.913" cy="50.004" fill="#b58c1e" stroke-width="1.5" rx="49.417" ry="49.417"/>
+                <text x="247.03" y="198.686" fill="#fff" stroke-width="0" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="bold" transform="matrix(2.49918 0 0 2.49918 -599.068 -425.708)">
+                  IO
+                </text>
+              </g>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <section id="section-2">
+        <h2>Dans une balise img</h2>
+        <figure class="svg-wrap">
+          <!-- votre img ici -->
+          <img src="img/heavy-metal-logo.svg" alt="Heavy metal logo">
+        </figure>
+      </section>
+
+      <section id="section-3">
+        <h2>Dans l'arrière-plan</h2>
+        <figure class="svg-wrap svg-bg"></figure>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+      <p><a href="https://petercollingridge.appspot.com/svg-editor" target="_blank">Peter Collingridge - SVG Editor</a></p>
+      <p><a href="https://jakearchibald.github.io/svgomg/" target="_blank">Jake Archibald - SVGOMG</a></p>
+      <p><a href="https://css-tricks.com/using-svg/" target="_blank">CSS-Tricks - Using SVG</a></p>
+    </div>
+    </footer>
+  </body>
+</html>

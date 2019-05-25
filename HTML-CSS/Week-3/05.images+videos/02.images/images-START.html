@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS - Responsive Images</title>
+
+    <link rel="stylesheet" href="https://poco.squarelabel.com/assets/common/common.css">
+
+    <style>
+      /* LAYOUT
+      ---------------------------------------*/
+      .flex {
+        display: flex;
+      }
+
+      /* SECTIONS
+      -------------------*/
+      section {
+        padding: 40px; /* marges intérieures pour tenir à distance son contenu */
+        background-color: #eee; /* BG section */
+      }
+
+      figure {
+        flex: 2;
+        margin: auto; /* juste un centrage au cas ou ce n'est pas du 100%... */
+      }
+      figure img {
+        /*propriétés de la balise <img>...*/
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .figure-aside {
+        flex: 1;
+        padding: 2em;
+        background-color: #fff;
+      }
+
+      .img-bg {
+        min-height: 200px;
+        /*propriétés du background...*/
+        background-image: url(img/unsplash-01.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section id="section-1">
+      <figure class="image">
+        <!--put an image here-->
+        <img src="img/judas-priest.jpg" alt="Judas Priest concert 2016">
+      </figure>
+    </section>
+
+    <section id="section-2" class="flex">
+      <figure>
+        <!--put an image here-->
+        <img src="img/unsplash-02.jpg" alt="Switzerland mountains">
+      </figure>
+      <div class="figure-aside">
+        <h2>Some title</h2>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+      </div>
+    </section>
+
+    <section id="section-3" class="flex">
+      <figure class="img-bg"></figure>
+      <div class="figure-aside">
+        <h2>Some title</h2>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+      </div>
+    </section>
+
+  </body>
+</html>

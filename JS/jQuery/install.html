@@ -1,0 +1,80 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery Intro</title>
+</head>
+<body>
+
+  <h1>jQuery intro</h1>
+  <p><button id="bob">Click me</button><button id="remove">Remove me</button></p>
+
+  <script src="js/jquery-3.4.1.slim.min.js"></script>
+  
+  <script>
+  //ON DOM READY    
+  $(function() {
+
+    //VANILLA JS
+    const bobButton = document.querySelector("button");
+
+    bobButton.addEventListener('click', function() {
+      bobButton.classList.add("bob-is-great");
+    });
+
+    //jQUERY
+    $("#bob").on('click', function() {
+      $("body").addClass("bob-is-great");
+    });
+
+    $("#remove").on('click', function() {
+      $("body").removeClass("bob-is-great");
+    });
+  
+  }); // End DOM READY
+  </script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery Intro</title>
+</head>
+<body>
+
+  <h1>jQuery intro</h1>
+  <p><button id="bob">Click me</button><button id="remove">Remove me</button></p>
+
+  <script src="js/jquery-3.4.1.slim.min.js"></script>
+  
+  <script>
+  //ON DOM READY    
+  $(function() {
+
+    //VANILLA JS
+    const bobButton = document.querySelector("button");
+
+    bobButton.addEventListener('click', function() {
+      bobButton.classList.add("bob-is-great");
+    });
+
+    //jQUERY
+    $("#bob").on('click', function() {
+      $("body").addClass("bob-is-great");
+    });
+
+    $("#remove").on('click', function() {
+      $("body").removeClass("bob-is-great");
+    });
+  
+  }); // End DOM READY
+  </script>
+</body>
+>>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
+</html>
