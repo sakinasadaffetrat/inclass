@@ -28,8 +28,27 @@ $site_data_arr = json_decode($json_content, true); //show($site_data_arr);
 
 //SITE DATA ARRAY
 $site_data = $site_data_arr["site-data"];
-$pages = $site_data_arr["pages"];
+$pages = $site_data_arr["pages"]; //show($pages);
 $active_page = $pages[$get_page];
+
+
+/* LOOPS
+--------------------------------------*/
+// $num = 10;
+
+//FOR LOOP
+// for($i = 1; $i <= $num; $i++) {
+//   show($i);
+// }
+
+//FOREACH LOOP
+// foreach($site_data as $key => $value) {
+//   show($key.' => '.$value);
+// }
+$menu_items = '';
+foreach($pages as $keys => $value) {
+    $menu_items .= '';
+}
 
 
 //SHOW FUNCTION
@@ -72,10 +91,7 @@ function show($data = '') {
     <!-- Nav -->
     <nav class="nav">
       <ul class="menu">
-        <li class="menu-item active"><a href="?page=index">HOME</a></li>
-        <li class="menu-item"><a href="?page=work">WORK</a></li>
-        <li class="menu-item"><a href="?page=contact">CONTACT</a></li>
-        <li class="menu-item"><a href="?page=bob">BOB</a></li>
+        <?php echo $menu_items; ?>
       </ul>
     </nav>
 
