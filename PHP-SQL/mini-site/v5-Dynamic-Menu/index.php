@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
 
 //PHP7
-$get_page = $_GET['page'] ?? 'index';
+$get_page = $_GET['page'] ?? 'index'; //show($get_page);
 
 $html_file_path = 'html/'.$get_page.'.html'; 
 
@@ -46,9 +46,15 @@ $active_page = $pages[$get_page];
 //   show($key.' => '.$value);
 // }
 $menu_items = '';
-foreach($pages as $keys => $value) {
-    $menu_items .= '';
-}
+foreach($pages as $key => $value) {
+
+    $menu = $value['menu'];
+    $active = ($get_page === $key) ? ' active' : '';
+
+    $menu_items .= '<li class="menu-item'.$active.'"><a href="?page='.$key.'">'.$menu.'</a></li>'.PHP_EOL;
+
+  }
+//show($menu_items);
 
 
 //SHOW FUNCTION
