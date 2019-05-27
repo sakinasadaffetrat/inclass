@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+$get = $_GET['page'];
+
+$html_page = file_get_contents('html/' .$get. '.html');
+=======
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
  
@@ -11,6 +16,7 @@ if(empty($get_page)) {
 //echo $get_page;
 
 $html_page = file_get_contents('html/'.$get_page.'.html');
+>>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,7 +62,11 @@ $html_page = file_get_contents('html/'.$get_page.'.html');
   <main class="content">
 
     <!-- Main Title -->
+<<<<<<< HEAD
+    <h1 class="main-title">This is the PLACEHOLDER for the TITLE !!!</h1>
+=======
     <h1 class="main-title">This is the PLACEHOLDER for the TITLE</h1>
+>>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
 
     <!-- HTML content -->
     <?php echo $html_page; ?>
@@ -64,7 +74,11 @@ $html_page = file_get_contents('html/'.$get_page.'.html');
   </main>
 
 
+<<<<<<< HEAD
+  <!-- FOOTER -->
+=======
   <!-- FOOTER -- >
+>>>>>>> fff9f128f8490f235604ef21c6594cb7b7445490
   <footer class="footer">
     <p>&copy;1998 - <?php echo date('Y'); ?> - Heavy Metal Company</p>
   </footer>
