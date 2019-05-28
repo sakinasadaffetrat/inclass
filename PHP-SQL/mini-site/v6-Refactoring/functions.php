@@ -5,14 +5,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 //PHP7
 $get_page = $_GET['page'] ?? 'index'; //show($get_page);
 
-$html_file_path = 'html/'.$get_page.'.html'; 
 
-if(file_exists($html_file_path)) {
-  $html_page = file_get_contents($html_file_path);
-}
-else {
-  $html_page = '404. The page you are looking for in not here.';
-}
 
 
 //GET JSON DATA
@@ -47,6 +40,25 @@ function menu_items() {
   return $menu_items;
 
 }
+
+
+/* CONTENT
+--------------------------------------*/
+function content() {
+
+  $html_file_path = 'html/'.$get_page.'.html'; 
+
+  if(file_exists($html_file_path)) {
+    $html_page = file_get_contents($html_file_path);
+  }
+  else {
+    $html_page = '404. The page you are looking for in not here.';
+  }
+
+  return $html_page;
+
+}
+
 
 /* SHOW FUNCTION
 --------------------------------------*/
