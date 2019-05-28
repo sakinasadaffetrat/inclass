@@ -8,7 +8,7 @@ require_once('functions.php');
 
 <head>
   <meta charset="utf-8">
-  <title><?php echo $active_page['title'].' - '.$site_data["global_title"]; ?></title>
+  <title><?php echo title('head'); ?></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?php echo $site_data["description"]; ?>">
@@ -46,7 +46,7 @@ require_once('functions.php');
 
     <!-- Main Title -->
     <h1 class="main-title">
-      <?php echo $active_page['title']; ?>
+      <?php echo title(); ?>
     </h1>
 
     <!-- HTML content -->
