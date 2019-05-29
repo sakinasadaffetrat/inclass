@@ -107,7 +107,7 @@ function title($zone = 'content', $params) {
   if($zone === 'head') {
     return $page_title.' - '.$global_title;
   }
-  
+   
   return $page_title;
 
 }

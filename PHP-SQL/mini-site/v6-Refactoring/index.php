@@ -46,7 +46,7 @@ require_once('functions.php');
 
     <!-- Main Title -->
     <h1 class="main-title">
-      <?php echo title('', $params); ?>
+      <?php echo title('content', $params); ?>
     </h1>
 
     <!-- HTML content -->
