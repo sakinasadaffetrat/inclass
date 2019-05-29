@@ -2,13 +2,27 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
 
-//PHP7
-$get_page = $_GET['page'] ?? 'index'; //show($get_page);
 
-//SITE DATA ARRAY
-$site_data = site_data(); //show($site_data);
-$pages = (is_array($site_data)) ? $site_data["pages"] : []; //show($pages);
-$active_page = $pages[$get_page]; //show($active_page);
+//TEST HOISTING
+// if( function_exists('site_info') ) {
+//   show("Yes, the function 'site_info' exists!");
+// }
+
+
+/* GLOBALS / INIT
+--------------------------------------*/
+$get_page   = $_GET['page'] ?? 'index'; //show($get_page);
+$site_info  = site_info(); //show($site_info);
+
+
+/* PARAMETERS
+--------------------------------------*/
+$params = [
+  'get_page'    => $get_page,
+  'site_data'   => $site_info['site-data'],
+  'pages'       => $site_info['pages'],
+  'active_page' => $site_info['pages'][$get_page]
+];
 
 
 //show($GLOBALS);
@@ -16,13 +30,15 @@ $active_page = $pages[$get_page]; //show($active_page);
 
 /* MENU HTML ITEMS
 --------------------------------------*/
-function site_data() {
+function site_info() {
 
   //GET JSON DATA
   $json_file = 'site-data.json';
 
   if( ! file_exists($json_file) ) {
-    return [];
+    //return [];
+    //die("You don't have the site data file!");
+    exit("You don't have the site data file!");
   }
 
   $json_content = file_get_contents($json_file);
@@ -61,10 +77,7 @@ function menu_items() {
 
 /* CONTENT
 --------------------------------------*/
-function content() {
-
-  global $get_page;
-  //$get_page = $GLOBALS['get_page'];
+function content($get_page = 'index') {
 
   $html_file_path = 'html/'.$get_page.'.html';
 

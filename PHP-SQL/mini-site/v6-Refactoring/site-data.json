@@ -20,10 +20,6 @@
     "contact": {
       "title": "Say hello",
       "menu": "CONTACT"
-    },
-    "bob": {
-      "title": "Bob Say hello",
-      "menu": "BOB"
     }
   }
 

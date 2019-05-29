@@ -50,7 +50,7 @@ require_once('functions.php');
     </h1>
 
     <!-- HTML content -->
-    <?php echo content(); ?>
+    <?php echo content($get_page); ?>
 
   </main>
 
