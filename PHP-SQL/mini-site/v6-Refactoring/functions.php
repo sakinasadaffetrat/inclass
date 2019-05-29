@@ -51,9 +51,10 @@ function site_info() {
 
 /* MENU HTML ITEMS
 --------------------------------------*/
-function menu_items() {
+function menu_items($params = []) {
 
-  global $pages, $get_page;
+  $pages = $params['pages'];
+  $get_page = $params['get_page'];
 
   $menu_items = '';
 
@@ -95,9 +96,10 @@ function content($get_page = 'index') {
 
 /* TITLE
 --------------------------------------*/
-function title($zone = 'content') {
+function title($zone = 'content', $params) {
 
-  global $site_data, $active_page;
+  $site_data = $params['site_data'];
+  $active_page = $params['active_page'];
 
   $global_title = $site_data['global_title'];
   $page_title = $active_page['title'];

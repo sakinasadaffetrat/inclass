@@ -8,7 +8,7 @@ require_once('functions.php');
 
 <head>
   <meta charset="utf-8">
-  <title><?php echo title('head'); ?></title>
+  <title><?php echo title('head', $params); ?></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?php echo $site_data["description"]; ?>">
@@ -34,7 +34,7 @@ require_once('functions.php');
     <!-- Nav -->
     <nav class="nav">
       <ul class="menu">
-        <?php echo menu_items(); ?>
+        <?php echo menu_items($params); ?>
       </ul>
     </nav>
 
@@ -46,7 +46,7 @@ require_once('functions.php');
 
     <!-- Main Title -->
     <h1 class="main-title">
-      <?php echo title(); ?>
+      <?php echo title('', $params); ?>
     </h1>
 
     <!-- HTML content -->
