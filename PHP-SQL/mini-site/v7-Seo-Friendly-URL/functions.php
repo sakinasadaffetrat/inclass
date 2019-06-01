@@ -11,7 +11,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 /* GLOBALS / INIT
 --------------------------------------*/
-$get_page   = $_GET['page'] ?? 'index'; //show($get_page);
+$get_page   = router(); //show($get_page);
 $site_info  = site_info(); //show($site_info);
 
 
@@ -30,14 +30,19 @@ $params = [
 --------------------------------------*/
 function router() {
 
-  $self = $_SERVER['PHP_SELF']; show($self);
-  $root = $_SERVER['REQUEST_URI']; show($root);
+  $self = str_replace('index.php', '', $_SERVER['PHP_SELF']); //show($self);
+  $slug = str_replace($self, '', $_SERVER['REQUEST_URI']); //show($slug);
 
-  $root_arr = explode('/', $root); show($root_arr);
-  $last = end($root_arr); show('Last: '.$last);
+  if( empty($slug) ) {
+    $slug = 'index';
+  }
+
+  return $slug;
+  //$root_arr = explode('/', $root); show($root_arr);
+  //$last = end($root_arr); show('Last: '.$last);
 
 }
-router();
+//show( router() );
  
 
 
