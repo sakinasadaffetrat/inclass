@@ -2,8 +2,6 @@
 require_once('php/pdo.php');
 require_once('php/queries.php');
 require_once('php/functions.php');
-
-
 ?>
 <!DOCTYPE html>
 <html>
