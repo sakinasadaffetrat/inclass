@@ -24,11 +24,11 @@ function query($zone, $params = []) {
 
     //QUERY PAGE
     case 'page' :
-      $sql = "SELECT page_key, title, content FROM pages WHERE slug = ?";
+      $sql = "SELECT page_key, title, content FROM pages WHERE slug = ? LIMIT 1";
 
       $sth = db()->prepare($sql);
       $sth->execute($params);
-      $results = $sth->fetchAll();
+      $results = $sth->fetch();
     break;
 
 

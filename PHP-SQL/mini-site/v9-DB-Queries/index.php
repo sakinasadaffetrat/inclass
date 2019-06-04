@@ -8,7 +8,7 @@ require_once('php/functions.php');
 
 <head>
   <meta charset="utf-8">
-  <title><?php echo title('head', $params); ?></title>
+  <title><?php echo title($params); ?></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?php echo $params['site_data']["description"]; ?>">
@@ -46,11 +46,11 @@ require_once('php/functions.php');
 
     <!-- Main Title -->
     <h1 class="main-title">
-      <?php echo title('content', $params); ?>
+      <?php echo title($params); ?>
     </h1>
 
     <!-- HTML content -->
-    <?php echo content($get_page); ?>
+    <?php echo content($params); ?>
 
   </main>
 
