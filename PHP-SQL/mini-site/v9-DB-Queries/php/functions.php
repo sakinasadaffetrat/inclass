@@ -11,19 +11,19 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 /* GLOBALS / INIT
 --------------------------------------*/
-$get_page   = router(); show($get_page);
-$site_info  = site_info(); //show($site_info);
+$get_page   = router(); //show($get_page);
 
+//show( query('settings') );
 
 /* PARAMETERS
 --------------------------------------*/
 $params = [
   'get_page'    => $get_page,
-  'site_data'   => $site_info['site-data'],
+  'settings'   => query('settings'),
   'active_page' => query('page', [$get_page])
 ];
 
-
+//show( $params['settings'] );
 
 
 /* ROUTER
@@ -44,28 +44,6 @@ function router() {
 
 }
 //show( router() );
- 
-
-
-/* SITE INFO FROM JSON [BAK]
---------------------------------------*/
-function site_info() {
-
-  //GET JSON DATA
-  $json_file = 'site-data.json';
-
-  if( ! file_exists($json_file) ) {
-    //return [];
-    //die("You don't have the site data file!");
-    exit("You don't have the site data file!");
-  }
-
-  $json_content = file_get_contents($json_file);
-  $site_data_arr = json_decode($json_content, true);
-
-  return $site_data_arr;
-
-}
 
 
 /* MENU HTML ITEMS
@@ -111,11 +89,17 @@ function content($params = []) {
 
 /* TITLE
 --------------------------------------*/
-function title($params) {
+function title($zone = 'content', $params = []) {
 
   $title = $params['active_page']['title'];
+  
 
-  return $title;
+  if($zone === 'content') {
+    return $title;
+  }
+
+  return $title.' | '.$params['settings']['global_title'];
+  
 
 }
 
