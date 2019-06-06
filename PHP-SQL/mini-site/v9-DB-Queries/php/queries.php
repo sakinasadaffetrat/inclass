@@ -32,6 +32,16 @@ function query($zone, $params = []) {
     break;
 
 
+    //QUERY FOR THE DEFAULT SLUG
+    case 'home_slug' :
+      $sql = "SELECT slug FROM pages WHERE is_home = ? LIMIT 1";
+
+      $sth = db()->prepare($sql);
+      $sth->execute([1]);
+      $results = $sth->fetch();
+    break;
+
+
     //QUERY THE settings TABLE
     case 'settings' :
       $sql = "SELECT settings_key, settings_value FROM settings";
@@ -54,3 +64,5 @@ function query($zone, $params = []) {
 
 
 }
+
+//var_dump( query('home_slug') );

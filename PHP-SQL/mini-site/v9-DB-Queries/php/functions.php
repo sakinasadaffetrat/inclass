@@ -11,7 +11,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 /* GLOBALS / INIT
 --------------------------------------*/
-$get_page   = router(); //show($get_page);
+$get_page   = router(); show($get_page);
 $site_info  = site_info(); //show($site_info);
 
 
@@ -34,8 +34,9 @@ function router() {
   $slug = str_replace($self, '', $_SERVER['REQUEST_URI']); //show($slug);
 
   if( empty($slug) ) {
-    $slug = 'index';
-  }
+    $slug = query('home_slug')['slug'];
+    //$slug = $home_slug['slug'];
+;  }
 
   return $slug;
   //$root_arr = explode('/', $root); show($root_arr);
@@ -110,7 +111,7 @@ function content($params = []) {
 
 /* TITLE
 --------------------------------------*/
-function title($params = []) {
+function title($params) {
 
   $title = $params['active_page']['title'];
 
