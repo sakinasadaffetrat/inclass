@@ -8,14 +8,11 @@ header {
 }
 
 main {
-  min-height: 400px;
   display: flex;
   text-align: center;
 }
 article, aside {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 3em;
 }
 
 article {
