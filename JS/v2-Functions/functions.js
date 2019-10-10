@@ -50,9 +50,17 @@ function weekDay(day) {
 
 
 function meteoMsg(city, currentWeather) {
-  return "Today in CITY is a " + currentWeather + " day.";
+  return "Today in " + city + " is a " + currentWeather + " day.";
 }
 
-console.log( meteoMsg("cloudy") );
-console.log( meteoMsg("rainy") );
-console.log( meteoMsg("sunny") );
+// console.log( meteoMsg("Lausanne", "sunny") );
+// console.log( meteoMsg("Bucharest", "rainy") );
+// console.log( meteoMsg("Asmara", "sunny") );
+
+function playersPositions(player, position) {
+  return player + " is a " + position;
+}
+
+// console.log( playersPositions("Lionel Messi", "forward") );
+// console.log( playersPositions("Kylian Mbappe", "forward") );
+// console.log( playersPositions("David Beckham", "midfielder") );
