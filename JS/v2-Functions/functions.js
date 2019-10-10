@@ -14,6 +14,8 @@
 
 //   return age;
 // }
+// age(1988);
+// age(1956);
 
 //Age third version. Two arguments (parameters).
 // function age(birthYear, currentYear) {
@@ -23,15 +25,15 @@
 
 //Age forth version. One argument, one JS native function.
 function age(birthYear) {
-  let currentYear = new Date().getFullYear();
+  let currentYear = new Date().getFullYear(); //2019
   let age = currentYear - birthYear;
   return age;
 }
 
-console.log( age(1966) );
-console.log( age(1982) );
-console.log( age(1976) );
-console.log( age(2000) );
+// console.log( age(1966) );
+// console.log( age(1982) );
+// console.log( age(1976) );
+// console.log( age(2000) );
 
 function sayHello(firstName) {
   return "Hi there, " + firstName;
@@ -45,3 +47,12 @@ function weekDay(day) {
 }
 
 //console.log( weekDay("Tuesday") );
+
+
+function meteoMsg(city, currentWeather) {
+  return "Today in CITY is a " + currentWeather + " day.";
+}
+
+console.log( meteoMsg("cloudy") );
+console.log( meteoMsg("rainy") );
+console.log( meteoMsg("sunny") );
