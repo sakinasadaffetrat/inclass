@@ -26,3 +26,31 @@ let simpleObject = {
 
 
 //MY PERSONS OBJECT
+let persons = {
+
+  person1 : {
+    name: "Sorin Paun",
+    gender: "Male",
+    country: "Romania"
+  },
+  person2 : {
+    name: "Marc Martel",
+    gender: "Male",
+    country: "Canada"
+  },
+  person3 : {
+    name: "Véronique Paun",
+    gender: "Female",
+    country: "Switzerland"
+  },
+
+  person4 : ["Sorin Paun", "male", "RO"]
+
+};
+
+// console.log( persons.person1.name );
+// console.log( persons.person1.gender );
+// console.log( persons.person1.country );
+
+// console.log( persons.person4[0] );
+// console.log( persons.person4[1] );

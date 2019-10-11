@@ -1,46 +1,41 @@
-//MY TODO LIST - GLOBAL SCOPE
-let todoList = [
-  "Learn HTML5", 
-  "Learn CSS", 
-  "Learn JS", 
-  "Learn PHP"
-];
+let todos = {
 
+  //MY TODO LIST
+  list : [
+    "Learn HTML5", 
+    "Learn CSS", 
+    "Learn JS", 
+    "Learn PHP"
+  ],
 
-//DISPLAY TODOS
-function displayTodos() {
-  console.log(todoList);
-  let bob = 3; // LOCAL SCOPE - not available outside the function
+  //DISPLAY TODOS
+  displayTodos: function() {
+    console.log(this.list);
+  },
+
+  //ADD TODO
+  addTodo: function(todoText) {
+    this.list.push(todoText);
+    this.displayTodos();
+  },
+
+  //CHANGE TODO
+  changeTodo: function(index, text) {
+    this.list[index] = text;
+    this.displayTodos(); 
+  },
+
+  //DELETE TODO
+  deleteTodo: function(index) {
+    this.list.splice(index, 1);
+    this.displayTodos();
+  }
+
 }
-// displayTodos();
 
+console.log( todos.list );
+todos.addTodo("New todo");
 
-//ADD TODO
-function addTodo(todoText) {
-  todoList.push(todoText);
-  displayTodos();
-}
-// addTodo("Do that!");
-// addTodo("Do this!");
-// addTodo("Do NOT do that!");
-
-
-//CHANGE TODO
-function changeTodo(index, text) {
-  todoList[index] = text;
-  displayTodos(); 
-}
-// changeTodo(0, "Some todo");
-// changeTodo(2, "Something like this");
-
-
-//DELETE TODO
-function deleteTodo(index) {
-  todoList.splice(index, 1);
-  displayTodos();
-}
-// deleteTodo(1);
-// deleteTodo(3);
 
 
 
