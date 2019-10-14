@@ -54,7 +54,7 @@ console.log( calculateAge(2008) ); //11
 
 //OR COMPARISON OPERATOR
 if(weather == "rainy" || weather == "cloudy") {
-    
+    return "Take your jacket";
 }
 
 //COMPARAISON OPERATORS
