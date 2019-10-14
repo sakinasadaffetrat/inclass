@@ -1,5 +1,5 @@
 //A SIMPLE CONCEPT : true or false
 
 //Today's weather
-let raining = true;
+let raining = false;
 let sunny = true;
