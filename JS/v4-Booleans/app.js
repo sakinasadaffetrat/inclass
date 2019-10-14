@@ -49,7 +49,7 @@ let todos = {
 }; // END OBJECT todos
 
 
-console.log( todos.list );
+//console.log( todos.list );
 todos.addTodo("New todo");
 
 
