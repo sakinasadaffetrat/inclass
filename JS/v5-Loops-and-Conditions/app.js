@@ -3,10 +3,24 @@ let todos = {
 
   //MY TODO LIST - PROPERTY
   list : [
-    "Learn HTML5", 
-    "Learn CSS", 
-    "Learn JS", 
-    "Learn PHP"
+
+    {
+      text: "Learn HTML5",
+      completed: false
+    },
+    {
+      text: "Learn CSS",
+      completed: false
+    },
+    {
+      text: "Learn JS",
+      completed: false
+    },
+    {
+      text: "Learn PHP",
+      completed: false
+    }
+
   ],
 
   //DISPLAY TODOS - METHOD
@@ -35,8 +49,8 @@ let todos = {
 }; // END OBJECT todos
 
 
-console.log( todos.list );
-todos.addTodo("New todo");
+// console.log( todos.list );
+// todos.addTodo("New todo");
 
 
 

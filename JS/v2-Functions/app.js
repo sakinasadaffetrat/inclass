@@ -10,9 +10,8 @@ let todoList = [
 //DISPLAY TODOS
 function displayTodos() {
   console.log(todoList);
-  let bob = 3; // LOCAL SCOPE - not available outside the function
+  //let bob = 3; // LOCAL SCOPE - not available outside the function
 }
-
 displayTodos();
 
 
