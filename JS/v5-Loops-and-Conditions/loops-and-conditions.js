@@ -21,7 +21,7 @@
 function calculateAge(birthYear) {
 
   let currentYear = new Date().getFullYear();
-  let age = currentYear - birthYear;
+  let age = currentYear - birthYear; //2019
   let msg = "";
 
   if(age < 6) {
@@ -53,8 +53,9 @@ console.log( calculateAge(2016) ); //3
 console.log( calculateAge(2008) ); //11
 
 //OR COMPARISON OPERATOR
+let weather = "rainy";
 if(weather == "rainy" || weather == "cloudy") {
-    return "Take your jacket";
+    console.log("Take your jacket");
 }
 
 //COMPARAISON OPERATORS

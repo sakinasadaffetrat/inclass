@@ -44,13 +44,24 @@ let todos = {
   deleteTodo: function(index) {
     this.list.splice(index, 1);
     this.displayTodos();
+  },
+
+  //TOGGLE COMPLETED
+  toggleTodo: function(index) {
+  
+    let currentStatus = this.list[index].completed; //true or false
+    this.list[index].completed = ! currentStatus;
+    this.displayTodos();
+
   }
+
 
 }; // END OBJECT todos
 
 
-//console.log( todos.list );
-todos.addTodo("New todo");
+todos.displayTodos();
+todos.toggleTodo(2);
+todos.toggleTodo(2);
 
 
 
