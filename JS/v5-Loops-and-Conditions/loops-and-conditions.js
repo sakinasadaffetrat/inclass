@@ -47,16 +47,16 @@ function calculateAge(birthYear) {
 
 }
 
-console.log( calculateAge(1966) ); //53
-console.log( calculateAge(2000) ); //19
-console.log( calculateAge(2016) ); //3
-console.log( calculateAge(2008) ); //11
+// console.log( calculateAge(1966) ); //53
+// console.log( calculateAge(2000) ); //19
+// console.log( calculateAge(2016) ); //3
+// console.log( calculateAge(2008) ); //11
 
 //OR COMPARISON OPERATOR
-let weather = "rainy";
-if(weather == "rainy" || weather == "cloudy") {
-    console.log("Take your jacket");
-}
+// let weather = "rainy";
+// if(weather == "rainy" || weather == "cloudy") {
+//     console.log("Take your jacket");
+// }
 
 //COMPARAISON OPERATORS
 /*
@@ -68,3 +68,11 @@ if(weather == "rainy" || weather == "cloudy") {
 <
 <=
 */
+
+
+// LOOPS -----------------------------------
+let num = 100;
+
+for(let i = 1; i <= num; i++) {
+  console.log(i);
+}

@@ -30,14 +30,20 @@ let todos = {
 
   //ADD TODO
   addTodo: function(todoText) {
-    this.list.push(todoText);
+
+    let newTodo = {
+      text: todoText,
+      completed: false
+    }
+
+    this.list.push(newTodo);
     this.displayTodos();
   },
 
   //CHANGE TODO
-  changeTodo: function(index, text) {
-    this.list[index] = text;
-    this.displayTodos(); 
+  changeTodo: function(index, newText) {
+    this.list[index].text = newText;
+    this.displayTodos();
   },
 
   //DELETE TODO
@@ -58,12 +64,21 @@ let todos = {
 
 }; // END OBJECT todos
 
+// todos.displayTodos();
+// todos.addTodo("New todo");
+// todos.addTodo("Another todo");
 
-todos.displayTodos();
-todos.toggleTodo(2);
-todos.toggleTodo(2);
+// //todos.changeTodo(4, "Bob is great!");
+// console.log( todos.list[4] );
+// todos.list[4].text = "Something else";
+// console.log( todos.list[4] );
 
+console.log(todos);
+console.log(todos.list);
+console.log(todos.list[1]);
 
+todos.list[2].completed = true;
+console.log(todos.list[2]);
 
 
 
