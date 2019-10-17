@@ -71,8 +71,67 @@ function calculateAge(birthYear) {
 
 
 // LOOPS -----------------------------------
-let num = 100;
+// let num = 100;
 
-for(let i = 1; i <= num; i++) {
-  console.log(i);
+//FOR LOOP
+// for(let i = 1; i <= num; i++) {
+//   console.log(i);
+// }
+
+// AN ARRAY
+let names = ["Jack", "Bob", "Julia", "Margaret", "John", "Mélanie"];
+// console.log( names.length );
+
+// FOR LOOP with array length
+// for(let i = 0; i < names.length; i++) {
+//   console.log( names[i] );
+// }
+
+// FOREACH LOOP - with a anonymus function
+// names.forEach(function(item, index) {
+//   console.log(index, item);
+// });
+
+
+// FOREACH LOOP - with a custom function
+// function iterateNames(item) {
+//   console.log(item);
+// }
+
+// Call the custom function on each loop
+// names.forEach(iterateNames);
+
+//EXERCISE : LOOP INSIDE AN ARRAY CONTAINING OBJECTS
+let myTodos = [
+  {
+    text: "Item 1",
+    completed: false
+  },
+  {
+    text: "Item 2",
+    completed: false
+  },
+  {
+    text: "Item 3",
+    completed: false
+  },
+  {
+    text: "Item 3",
+    completed: false
+  }
+];
+
+//USE "FOR" TO DISPLAY THE TODOS TEXTS
+for(let i = 0; i < myTodos.length; i++) {
+  console.log( myTodos[i].text );
 }
+
+//USE "FOREACH" TO DISPLAY THE TODOS TEXTS
+myTodos.forEach(function(item) {
+  console.log(item.text);
+});
+
+
+
+
+

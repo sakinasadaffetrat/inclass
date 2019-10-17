@@ -66,7 +66,7 @@ let todos = {
 
 
 // console.log( todos.list );
-todos.addTodo("New todo");
+//todos.addTodo("New todo");
 
 
 
