@@ -30,21 +30,37 @@ let todos = {
 
   //ADD TODO
   addTodo: function(todoText) {
-    this.list.push(todoText);
+
+    let newTodo = {
+      text: todoText,
+      completed: false
+    }
+
+    this.list.push(newTodo);
     this.displayTodos();
   },
 
   //CHANGE TODO
-  changeTodo: function(index, text) {
-    this.list[index] = text;
-    this.displayTodos(); 
+  changeTodo: function(index, newText) {
+    this.list[index].text = newText;
+    this.displayTodos();
   },
 
   //DELETE TODO
   deleteTodo: function(index) {
     this.list.splice(index, 1);
     this.displayTodos();
+  },
+
+  //TOGGLE COMPLETED
+  toggleTodo: function(index) {
+  
+    let currentStatus = this.list[index].completed; //true or false
+    this.list[index].completed = ! currentStatus;
+    this.displayTodos();
+
   }
+
 
 }; // END OBJECT todos
 
