@@ -105,30 +105,44 @@ let names = ["Jack", "Bob", "Julia", "Margaret", "John", "Mélanie"];
 let myTodos = [
   {
     text: "Item 1",
-    completed: false
+    completed: true
   },
   {
     text: "Item 2",
-    completed: false
+    completed: true
   },
   {
     text: "Item 3",
-    completed: false
+    completed: true
   },
   {
-    text: "Item 3",
+    text: "Item 4",
     completed: false
   }
 ];
 
 //USE "FOR" TO DISPLAY THE TODOS TEXTS
-for(let i = 0; i < myTodos.length; i++) {
-  console.log( myTodos[i].text );
-}
+// for(let i = 0; i < myTodos.length; i++) {
+//   console.log( myTodos[i].text );
+// }
 
 //USE "FOREACH" TO DISPLAY THE TODOS TEXTS
 myTodos.forEach(function(item) {
-  console.log(item.text);
+
+  // Check the status of completed key - Classic approach
+  // let completedStr = "";
+
+  // if(item.completed) {
+  //   completedStr = "(x)";
+  // }
+  // else {
+  //   completedStr = "( )";
+  // }
+
+  //Check the status of completed key - Ternary operator approach
+  let completedStr = (item.completed) ? "(x)" : "( )";
+
+  // console.log(completedStr, item.text);
 });
 
 

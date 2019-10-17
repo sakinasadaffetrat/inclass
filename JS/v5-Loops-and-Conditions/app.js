@@ -25,6 +25,7 @@ let todos = {
 
   //DISPLAY TODOS - METHOD
   displayTodos: function() {
+    
     console.log(this.list);
   },
 
@@ -65,8 +66,7 @@ let todos = {
 }; // END OBJECT todos
 
 
-// console.log( todos.list );
-//todos.addTodo("New todo");
+todos.displayTodos();
 
 
 
