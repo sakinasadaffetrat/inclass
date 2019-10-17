@@ -6,11 +6,11 @@ let todos = {
 
     {
       text: "Learn HTML5",
-      completed: false
+      completed: true
     },
     {
       text: "Learn CSS",
-      completed: false
+      completed: true
     },
     {
       text: "Learn JS",
@@ -25,8 +25,12 @@ let todos = {
 
   //DISPLAY TODOS - METHOD
   displayTodos: function() {
+
+    this.list.forEach(function(item) {
+      let completedStr = (item.completed) ? "(x)" : "( )";
+      console.log(completedStr, item.text);
+    });
     
-    console.log(this.list);
   },
 
   //ADD TODO
