@@ -26,6 +26,10 @@ let todos = {
   //DISPLAY TODOS - METHOD
   displayTodos: function() {
 
+    if(this.list.length == 0) {
+      console.log("You don't have any todos, add some!");
+    }
+
     this.list.forEach(function(item) {
       let completedStr = (item.completed) ? "(x)" : "( )";
       console.log(completedStr, item.text);
