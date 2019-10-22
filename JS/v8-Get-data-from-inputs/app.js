@@ -108,33 +108,83 @@ let todos = {
 }; // END OBJECT todos
 
 
+//START OBJECT handlers
+let handlers = {
+  
+  //Handler for adding todo
+  addTodo: function() {
+    const inputAdd = document.getElementById('inputAdd');
+
+    if(inputAdd.value !== '') {
+      todos.addTodo(inputAdd.value);
+      inputAdd.value = '';
+    }
+    else {
+      alert("The input text cannot be empty!");
+    }
+  },
+
+  //Handler for toggle todo
+  toggleTodo: function() {
+    const inputToggleIndex = document.getElementById('inputToggleIndex');
+
+    if(inputToggleIndex.value !== '') {
+      todos.toggleTodo(inputToggleIndex.value);
+      inputToggleIndex.value = '';
+    }
+    else {
+      alert("The index cannot be empty!");
+    }
+  }
+
+};
+
+
+
 //LINK YOUR HTML buttons
-const btnDisplay = document.getElementById('btnDisplay');
-const btnToggleAll = document.getElementById('btnToggleAll');
+// const btnDisplay = document.getElementById('btnDisplay');
+// const btnToggleAll = document.getElementById('btnToggleAll');
 
 //Display todos btn
-btnDisplay.addEventListener('click', function() {
-  todos.displayTodos();
-});
+// btnDisplay.addEventListener('click', function() {
+//   todos.displayTodos();
+// });
 
 //Toggle todos btn
-btnToggleAll.addEventListener('click', function() {
-  todos.toggleAll();
-});
+// btnToggleAll.addEventListener('click', function() {
+//   todos.toggleAll();
+// });
 
 //ADD Todo btn and input
-const btnAdd = document.getElementById('btnAdd');
+// const btnAdd = document.getElementById('btnAdd');
 
-btnAdd.addEventListener('click', function() {
+// btnAdd.addEventListener('click', function() {
 
-  const inputAdd = document.getElementById('inputAdd');
+//   const inputAdd = document.getElementById('inputAdd');
 
-  if(inputAdd.value !== '') {
-    todos.addTodo(inputAdd.value);
-    inputAdd.value = '';
+//   if(inputAdd.value !== '') {
+//     todos.addTodo(inputAdd.value);
+//     inputAdd.value = '';
+//   }
+//   else {
+//     alert("The input text cannot be empty!");
+//   }
+
+// });
+
+//TOGGLE Todo btn and input
+const btnToggle = document.getElementById('btnToggle');
+
+btnToggle.addEventListener('click', function() {
+
+  const inputToggleIndex = document.getElementById('inputToggleIndex');
+
+  if(inputToggleIndex.value !== '') {
+    todos.toggleTodo(inputToggleIndex.value);
+    inputToggleIndex.value = '';
   }
   else {
-    alert("The input text cannot be empty!");
+    alert("The index cannot be empty!");
   }
 
 });
@@ -142,7 +192,7 @@ btnAdd.addEventListener('click', function() {
 
 
 
-
+todos.addTodo("asdasd");
 
 
 
