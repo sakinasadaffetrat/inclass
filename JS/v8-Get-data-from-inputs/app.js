@@ -112,17 +112,67 @@ let todos = {
 const btnDisplay = document.getElementById('btnDisplay');
 const btnToggleAll = document.getElementById('btnToggleAll');
 
+//Display todos btn
 btnDisplay.addEventListener('click', function() {
   todos.displayTodos();
 });
 
+//Toggle todos btn
 btnToggleAll.addEventListener('click', function() {
   todos.toggleAll();
 });
+
+//ADD Todo btn and input
+const btnAdd = document.getElementById('btnAdd');
+
+btnAdd.addEventListener('click', function() {
+
+  const inputAdd = document.getElementById('inputAdd');
+
+  if(inputAdd.value !== '') {
+    todos.addTodo(inputAdd.value);
+    inputAdd.value = '';
+  }
+  else {
+    alert("The input text cannot be empty!");
+  }
+
+});
+
+
+
+
+
+
+
+
 
 //IN jQuery is something like this:
 // $("#btnDisplay").on('click', function() {
 //   todos.displayTodos();
 // })
 
+//WHAT WE'VE MISSED :
+//1. STRICT COMPARISON
+/*
+let num = "3";
+if(num === 3) {
+  console.log("TRUE");
+}
+else {
+  console.log("FALSE");
+}
+
+let bool = 1;
+if(bool === true) {
+  console.log("TRUE");
+}
+else {
+  console.log("FALSE");
+}
+
+//2. You can write conditions like this :
+if(true) console.log("TRUE");
+else console.log("FALSE");
+*/
 
