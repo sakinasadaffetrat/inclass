@@ -14,11 +14,11 @@ let todos = {
     },
     {
       text: "Learn JS",
-      completed: true
+      completed: false
     },
     {
       text: "Learn PHP",
-      completed: true
+      completed: false
     }
 
   ],
@@ -34,7 +34,7 @@ let todos = {
       let completedStr = (item.completed) ? "(x)" : "( )";
       console.log(completedStr, item.text);
     });
-    
+    console.log("-------------");
   },
 
   //ADD TODO
@@ -85,32 +85,15 @@ let todos = {
         completedItems++; //or... completedItems += 1;
       }
     });
-    console.log("Completed items:", completedItems);
+    //console.log("Completed items:", completedItems);
 
-    //2. IF nothing is completed => check them all 
-    // OR IF we have completed items => check them all
-    //Version 1
-    // if(completedItems == 0 || (completedItems > 0 && completedItems != totalTodos)) {
-    //   console.log("Check them all !");
-    // }
-    // else {
-    //   console.log("Uncheck them all !");
-    // }
-
-    //Version 2
-    // if(completedItems >= 0 && completedItems != totalTodos) {
-    //   console.log("Check them all !");
-    // }
-    // else {
-    //   console.log("Uncheck them all !");
-    // }
-
-    //Version 3
+    //IF everything is completed => uncheck them all 
     if(completedItems == totalTodos) {
       this.list.forEach(function(item) {
         item.completed = false;
       });
     }
+    //ELSE check them all
     else {
       this.list.forEach(function(item) {
         item.completed = true;
@@ -125,13 +108,19 @@ let todos = {
 }; // END OBJECT todos
 
 
-todos.displayTodos();
-//todos.toggleAll();
+//LINK YOUR HTML buttons
+const btnDisplay = document.getElementById('btnDisplay');
+const btnToggleAll = document.getElementById('btnToggleAll');
 
+btnDisplay.addEventListener('click', function() {
+  todos.displayTodos();
+});
 
-// 3 + (4 * 2) - 3; //8,
-// (3 + 4) * 2 - 3; //11
+btnToggleAll.addEventListener('click', function() {
+  todos.toggleAll();
+});
 
-
-
-
+//IN jQuery is something like this:
+// $("#btnDisplay").on('click', function() {
+//   todos.displayTodos();
+// })
