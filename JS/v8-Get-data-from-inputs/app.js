@@ -1,4 +1,6 @@
-//START OBJECT todos
+/* TODOS OBJECT
+ * Specialty: manipulate the todos array
+-----------------------------------------------*/
 let todos = {
 
   //MY TODO LIST - PROPERTY
@@ -104,14 +106,16 @@ let todos = {
 
   }
 
-
 }; // END OBJECT todos
 
 
-//START OBJECT handlers
+/* HANDLERS OBJECT
+ * Specialty: communicate with HTML, grab
+ * the input values and send them to todos obj.
+-----------------------------------------------*/
 let handlers = {
-  
-  //Handler for adding todo
+
+  //Handler for ADD todo
   addTodo: function() {
     const inputAdd = document.getElementById('inputAdd');
 
@@ -124,13 +128,41 @@ let handlers = {
     }
   },
 
-  //Handler for toggle todo
+  //Handler for CHANGE todo
+  changeTodo: function() {
+    const inputChangeIndex = document.getElementById('inputChangeIndex');
+    const inputChangeText = document.getElementById('inputChangeText');
+
+    if(inputChangeIndex.value !== '' && inputChangeText.value !== '') {
+      todos.changeTodo(inputChangeIndex.value, inputChangeText.value);
+      inputChangeIndex.value = inputChangeText.value = '';
+    }
+    else {
+      alert("The index cannot be empty!");
+    }
+  },
+
+  //Handler for DELETE todo
+  deleteTodo: function() {
+    const inputDeleteIndex = document.getElementById('inputDeleteIndex');
+
+    if(inputDeleteIndex.value !== '') {
+      todos.deleteTodo(inputDeleteIndex.value);
+      inputDeleteIndex.value = '';
+    }
+    else {
+      alert("The index cannot be empty!");
+    }
+  },
+
+  //Handler for TOGGLE todo
   toggleTodo: function() {
     const inputToggleIndex = document.getElementById('inputToggleIndex');
 
     if(inputToggleIndex.value !== '') {
       todos.toggleTodo(inputToggleIndex.value);
       inputToggleIndex.value = '';
+      return;
     }
     else {
       alert("The index cannot be empty!");
@@ -173,26 +205,26 @@ let handlers = {
 // });
 
 //TOGGLE Todo btn and input
-const btnToggle = document.getElementById('btnToggle');
+// const btnToggle = document.getElementById('btnToggle');
 
-btnToggle.addEventListener('click', function() {
+// btnToggle.addEventListener('click', function() {
 
-  const inputToggleIndex = document.getElementById('inputToggleIndex');
+//   const inputToggleIndex = document.getElementById('inputToggleIndex');
 
-  if(inputToggleIndex.value !== '') {
-    todos.toggleTodo(inputToggleIndex.value);
-    inputToggleIndex.value = '';
-  }
-  else {
-    alert("The index cannot be empty!");
-  }
+//   if(inputToggleIndex.value !== '') {
+//     todos.toggleTodo(inputToggleIndex.value);
+//     inputToggleIndex.value = '';
+//   }
+//   else {
+//     alert("The index cannot be empty!");
+//   }
 
-});
-
-
+// });
 
 
-todos.addTodo("asdasd");
+
+
+// todos.addTodo("asdasd");
 
 
 
