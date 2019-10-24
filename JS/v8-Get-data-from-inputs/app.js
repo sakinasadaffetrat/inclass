@@ -115,17 +115,29 @@ let todos = {
 -----------------------------------------------*/
 let handlers = {
 
+  //Check if an input is empty. Alert if so
+  isEmpty: function(input) {
+
+    if(input.value === '') {
+      alert("The input ''" + input.id + "'' cannot be empty!");
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  },
+
   //Handler for ADD todo
   addTodo: function() {
     const inputAdd = document.getElementById('inputAdd');
 
-    if(inputAdd.value !== '') {
+    if(! this.isEmpty(inputAdd)) {
       todos.addTodo(inputAdd.value);
       inputAdd.value = '';
     }
-    else {
-      alert("The input text cannot be empty!");
-    }
+
+
   },
 
   //Handler for CHANGE todo
@@ -138,7 +150,7 @@ let handlers = {
       inputChangeIndex.value = inputChangeText.value = '';
     }
     else {
-      alert("The index cannot be empty!");
+      alert("The index and the text cannot be empty!");
     }
   },
 
