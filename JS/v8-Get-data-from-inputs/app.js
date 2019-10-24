@@ -145,39 +145,31 @@ let handlers = {
     const inputChangeIndex = document.getElementById('inputChangeIndex');
     const inputChangeText = document.getElementById('inputChangeText');
 
-    if(inputChangeIndex.value !== '' && inputChangeText.value !== '') {
+    if(! this.isEmpty(inputChangeIndex) && ! this.isEmpty(inputChangeText)) {
       todos.changeTodo(inputChangeIndex.value, inputChangeText.value);
       inputChangeIndex.value = inputChangeText.value = '';
     }
-    else {
-      alert("The index and the text cannot be empty!");
-    }
+
   },
 
   //Handler for DELETE todo
   deleteTodo: function() {
     const inputDeleteIndex = document.getElementById('inputDeleteIndex');
 
-    if(inputDeleteIndex.value !== '') {
+    if(! this.isEmpty(inputDeleteIndex)) {
       todos.deleteTodo(inputDeleteIndex.value);
       inputDeleteIndex.value = '';
     }
-    else {
-      alert("The index cannot be empty!");
-    }
+
   },
 
   //Handler for TOGGLE todo
   toggleTodo: function() {
     const inputToggleIndex = document.getElementById('inputToggleIndex');
 
-    if(inputToggleIndex.value !== '') {
+    if(! this.isEmpty(inputToggleIndex)) {
       todos.toggleTodo(inputToggleIndex.value);
       inputToggleIndex.value = '';
-      return;
-    }
-    else {
-      alert("The index cannot be empty!");
     }
   }
 
