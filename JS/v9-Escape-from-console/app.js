@@ -6,38 +6,24 @@ let todos = {
   //MY TODO LIST - PROPERTY
   list : [
 
-    {
-      text: "Learn HTML5",
-      completed: true
-    },
-    {
-      text: "Learn CSS",
-      completed: true
-    },
-    {
-      text: "Learn JS",
-      completed: false
-    },
-    {
-      text: "Learn PHP",
-      completed: false
-    }
+    // {
+    //   text: "Learn HTML5",
+    //   completed: true
+    // },
+    // {
+    //   text: "Learn CSS",
+    //   completed: true
+    // },
+    // {
+    //   text: "Learn JS",
+    //   completed: false
+    // },
+    // {
+    //   text: "Learn PHP",
+    //   completed: false
+    // }
 
   ],
-
-  //DISPLAY TODOS - METHOD
-  displayTodos: function() {
-
-    if(this.list.length == 0) {
-      console.log("You don't have any todos, add some!");
-    }
-
-    this.list.forEach(function(item) {
-      let completedStr = (item.completed) ? "(x)" : "( )";
-      console.log(completedStr, item.text);
-    });
-    console.log("-------------");
-  },
 
   //ADD TODO
   addTodo: function(todoText) {
@@ -54,13 +40,13 @@ let todos = {
   //CHANGE TODO
   changeTodo: function(index, newText) {
     this.list[index].text = newText;
-    this.displayTodos();
+    view.displayTodos();
   },
 
   //DELETE TODO
   deleteTodo: function(index) {
     this.list.splice(index, 1);
-    this.displayTodos();
+    view.displayTodos();
   },
 
   //TOGGLE COMPLETED
@@ -68,7 +54,7 @@ let todos = {
   
     let currentStatus = this.list[index].completed; //true or false
     this.list[index].completed = ! currentStatus;
-    this.displayTodos();
+    view.displayTodos();
 
   },
 
@@ -102,7 +88,7 @@ let todos = {
       });
     }
 
-    this.displayTodos();
+    view.displayTodos();
 
   }
 
@@ -118,8 +104,13 @@ let handlers = {
   //Check if an input is empty. Alert if so
   isEmpty: function(input) {
 
+    const msgElem = document.querySelector("#msg");
+    const msgElemText = document.querySelector("#msgText");
+
     if(input.value === '') {
-      alert("The input ''" + input.id + "'' cannot be empty!");
+      // alert("The input ''" + input.id + "'' cannot be empty!");
+      msgElemText.innerHTML = "The input ''" + input.id + "'' cannot be empty!";
+      msgElem.classList.remove('hidden');
       return true;
     }
     else {
@@ -185,10 +176,21 @@ let view = {
   displayTodos: function() {
 
     const ul = document.querySelector("#todo-list");
+    const msgElem = document.querySelector("#msg");
+    const msgElemText = document.querySelector("#msgText");
     ul.innerHTML = '';
 
-    if(todos.list.length == 0) {
+    if(todos.list.length === 0) {
+
+      msgElemText.innerHTML = "Your list is empty, please add something.";
       
+      // msgElem.setAttribute('class', '');
+      // msgElem.removeAttribute('class');
+      msgElem.classList.remove('hidden');
+
+    }
+    else {
+      msgElem.classList.add('hidden');
     }
 
 
@@ -198,6 +200,7 @@ let view = {
       let li = document.createElement('li');
       let completedStr = (item.completed) ? "(x)" : "( )";
       li.innerHTML = completedStr + "&nbsp;&nbsp;" + item.text;
+      
       ul.appendChild(li);
       
     });
