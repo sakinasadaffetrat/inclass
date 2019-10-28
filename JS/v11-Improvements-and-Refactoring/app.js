@@ -6,22 +6,22 @@ let todos = {
   //MY TODO LIST - PROPERTY
   list : [
 
-    {
-      text: "Learn HTML5",
-      completed: true
-    },
-    {
-      text: "Learn CSS",
-      completed: true
-    },
-    {
-      text: "Learn JS",
-      completed: false
-    },
-    {
-      text: "Learn PHP",
-      completed: false
-    }
+    // {
+    //   text: "Learn HTML5",
+    //   completed: true
+    // },
+    // {
+    //   text: "Learn CSS",
+    //   completed: true
+    // },
+    // {
+    //   text: "Learn JS",
+    //   completed: false
+    // },
+    // {
+    //   text: "Learn PHP",
+    //   completed: false
+    // }
 
   ],
 
@@ -94,7 +94,6 @@ let todos = {
 
 }; // END OBJECT todos
 
-
 /* HANDLERS OBJECT
  * Specialty: communicate with HTML, grab
  * the input values and send them to todos obj.
@@ -104,13 +103,8 @@ let handlers = {
   //Check if an input is empty. Alert if so
   isEmpty: function(input) {
 
-    const msgElem = document.querySelector("#msg");
-    const msgElemText = document.querySelector("#msgText");
-
     if(input.value === '') {
-      // alert("The input ''" + input.id + "'' cannot be empty!");
-      msgElemText.innerHTML = "The input ''" + input.id + "'' cannot be empty!";
-      msgElem.classList.remove('hidden');
+      message.show("The input ''" + input.id + "'' cannot be empty!");
       return true;
     }
     else {
@@ -176,21 +170,14 @@ let view = {
   displayTodos: function() {
 
     const ul = document.querySelector("#todo-list");
-    const msgElem = document.querySelector("#msg");
-    const msgElemText = document.querySelector("#msgText");
     ul.innerHTML = '';
 
     if(todos.list.length === 0) {
-
-      msgElemText.innerHTML = "Your list is empty, please add something.";
-      
-      // msgElem.setAttribute('class', '');
-      // msgElem.removeAttribute('class');
-      msgElem.classList.remove('hidden');
-
+      message.show("Your list is empty, please add something.", "info");
+      return;
     }
     else {
-      msgElem.classList.add('hidden');
+      message.hide();
     }
 
     //LOOP INSIDE YOUR TODO LIST
@@ -240,7 +227,9 @@ let listen = {
       //IF clicked element is a BUTTON tag
       if(elemClicked.tagName === 'BUTTON') {
         // console.log(elemClicked.id);
-        todos.deleteTodo(elemClicked.id);
+        if(confirm("Are you sure ?")) {
+          todos.deleteTodo(elemClicked.id);
+        }
       }
 
     });
@@ -249,5 +238,56 @@ let listen = {
 
 }
 
+
+/* MESSAGE OBJECT
+ * Specialty: show messages to the user
+ * message.show(); or message.hide();
+-----------------------------------------------*/
+let message = {
+
+  //DOM objects
+  msgElem: document.querySelector("#msg"),
+  msgElemIcon: document.querySelector("#msgIcon"),
+  msgElemText: document.querySelector("#msgText"),
+
+  //SHOW MESSAGE
+  show: function(msgStr, msgType = 'error') {
+
+    this.msgElem.classList.remove('error', 'info');
+
+    let typeClass = (msgType === 'error') ? 'error' : 'info';
+    let typeIcon = (msgType === 'error') ? '&#9888;' : '&#9432;';
+    
+    this.msgElem.classList.add(typeClass);
+    this.msgElemIcon.innerHTML = typeIcon;
+    this.msgElemText.innerHTML = msgStr;
+
+    this.msgElem.classList.remove('hidden');
+
+  },
+
+  //HIDE MESSAGE
+  hide: function() {
+    this.msgElem.classList.add('hidden');
+  }
+
+}
+
+
 listen.ulEvents();
 view.displayTodos();
+
+
+
+//WHAT POP-UP BOXES IN JS ?
+// alert("Go planet !");
+
+// confirm("Are your sure ?");
+// if( confirm("Are your sure ?") ) {
+//   alert("Yes you are !");
+// }
+// else {
+//   alert("I knew it, you are scared !");
+// }
+
+// prompt("What's your name ?");
