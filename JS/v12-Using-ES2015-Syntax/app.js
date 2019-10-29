@@ -26,49 +26,51 @@ let todos = {
   ],
 
   //ADD TODO
-  addTodo: function(todoText) {
+  //addTodo: function(todoText) {
+  //addTodo: todoText => {
+  addTodo: (todoText) => {
 
     let newTodo = {
       text: todoText,
       completed: false
     }
 
-    this.list.push(newTodo);
+    todos.list.push(newTodo);
     view.displayTodos();
   },
 
   //CHANGE TODO
-  changeTodo: function(index, newText) {
-    this.list[index].text = newText;
+  changeTodo: (index, newText) => {
+    todos.list[index].text = newText;
     view.displayTodos();
   },
 
   //DELETE TODO
-  deleteTodo: function(index) {
-    this.list.splice(index, 1);
+  deleteTodo: (index) => {
+    todos.list.splice(index, 1);
     view.displayTodos();
   },
 
   //TOGGLE COMPLETED
-  toggleTodo: function(index) {
+  toggleTodo: (index) => {
   
-    let currentStatus = this.list[index].completed; //true or false
-    this.list[index].completed = ! currentStatus;
+    let currentStatus = todos.list[index].completed; //true or false
+    todos.list[index].completed = ! currentStatus;
     view.displayTodos();
 
   },
 
   //TOGGLE ALL !
-  toggleAll: function() {
+  toggleAll: () => {
 
     //Completed items INIT
     let completedItems = 0;
     
     //How many todos I have ?
-    let totalTodos = this.list.length; //console.log("Total todos:", totalTodos);
+    let totalTodos = todos.list.length; //console.log("Total todos:", totalTodos);
 
-    //1. Check what items are completed (true)
-    this.list.forEach(function(item) {
+    //1. Check what items are completed (true )
+    todos.list.forEach((item) => {
       if(item.completed) {
         completedItems++; //or... completedItems += 1;
       }
@@ -77,13 +79,13 @@ let todos = {
 
     //IF everything is completed => uncheck them all 
     if(completedItems == totalTodos) {
-      this.list.forEach(function(item) {
+      todos.list.forEach((item) => {
         item.completed = false;
       });
     }
     //ELSE check them all
     else {
-      this.list.forEach(function(item) {
+      todos.list.forEach((item) => {
         item.completed = true;
       });
     }
@@ -94,7 +96,6 @@ let todos = {
 
 }; // END OBJECT todos
 
-
 /* HANDLERS OBJECT
  * Specialty: communicate with HTML, grab
  * the input values and send them to todos obj.
@@ -104,13 +105,9 @@ let handlers = {
   //Check if an input is empty. Alert if so
   isEmpty: function(input) {
 
-    const msgElem = document.querySelector("#msg");
-    const msgElemText = document.querySelector("#msgText");
-
     if(input.value === '') {
-      // alert("The input ''" + input.id + "'' cannot be empty!");
-      msgElemText.innerHTML = "The input ''" + input.id + "'' cannot be empty!";
-      msgElem.classList.remove('hidden');
+      // message.show("The input ''" + input.id + "'' cannot be empty!");
+      message.show(`The input "${input.id}" cannot be empty!`);
       return true;
     }
     else {
@@ -176,21 +173,14 @@ let view = {
   displayTodos: function() {
 
     const ul = document.querySelector("#todo-list");
-    const msgElem = document.querySelector("#msg");
-    const msgElemText = document.querySelector("#msgText");
     ul.innerHTML = '';
 
     if(todos.list.length === 0) {
-
-      msgElemText.innerHTML = "Your list is empty, please add something.";
-      
-      // msgElem.setAttribute('class', '');
-      // msgElem.removeAttribute('class');
-      msgElem.classList.remove('hidden');
-
+      message.show("Your list is empty, please add something.", "info");
+      return;
     }
     else {
-      msgElem.classList.add('hidden');
+      message.hide();
     }
 
     //LOOP INSIDE YOUR TODO LIST
@@ -200,8 +190,9 @@ let view = {
       let li = document.createElement('li');
       
       //2. Put todo status and text inside LI 
-      let completedStr = (item.completed) ? "(x)" : "( )";
-      li.innerHTML = completedStr + "&nbsp;&nbsp;" + item.text;
+      let completedStr = (item.completed) ? "(x)" : "(&nbsp;&nbsp;)";
+      
+      li.innerHTML = '<a href="#" id="' + index + '">' + completedStr + "&nbsp;&nbsp;" + item.text + '</a>';
       
       //3. Create the delete button
       let deleteBtn = document.createElement('button');
@@ -229,10 +220,6 @@ let listen = {
 
   ulEvents: function() {
 
-    $("#todo-list").on('click', function() {
-
-    });
-
     const ul = document.querySelector("#todo-list");
 
     ul.addEventListener('click', function(event) {
@@ -244,7 +231,15 @@ let listen = {
       //IF clicked element is a BUTTON tag
       if(elemClicked.tagName === 'BUTTON') {
         // console.log(elemClicked.id);
-        todos.deleteTodo(elemClicked.id);
+        if(confirm(`Are you sure to delete the index n° ${elemClicked.id} ?`)) {
+          todos.deleteTodo(elemClicked.id);
+        }
+      }
+
+      //IF clicked element is a A tag
+      if(elemClicked.tagName === 'A') {
+        event.preventDefault();
+        todos.toggleTodo(elemClicked.id);
       }
 
     });
@@ -253,5 +248,90 @@ let listen = {
 
 }
 
+
+/* MESSAGE OBJECT
+ * Specialty: show messages to the user
+ * message.show(); or message.hide();
+-----------------------------------------------*/
+let message = {
+
+  //DOM objects
+  msgElem: document.querySelector("#msg"),
+  msgElemIcon: document.querySelector("#msgIcon"),
+  msgElemText: document.querySelector("#msgText"),
+
+  //SHOW MESSAGE
+  show: function(msgStr, msgType = 'error') {
+
+    this.msgElem.classList.remove('error', 'info');
+
+    let typeClass = (msgType === 'error') ? 'error' : 'info';
+    let typeIcon = (msgType === 'error') ? '&#9888;' : '&#9432;';
+    
+    this.msgElem.classList.add(typeClass);
+    this.msgElemIcon.innerHTML = typeIcon;
+    this.msgElemText.innerHTML = msgStr;
+
+    this.msgElem.classList.remove('hidden');
+
+  },
+
+  //HIDE MESSAGE
+  hide: function() {
+    this.msgElem.classList.add('hidden');
+  }
+
+}
+
+
 listen.ulEvents();
 view.displayTodos();
+
+
+//Before ES2015 syntax
+function age1(birthYear) {
+  let currentYear = new Date().getFullYear(); //console.log(currentYear);
+  return currentYear - birthYear; //will return the age
+}
+// console.log( age1(1966) );
+
+//ES2015 New syntax
+let age2 = (birthYear) => { return 2019 - birthYear; };
+// console.log( age2(1966) );
+
+//When having 1 argument and one line of code
+let age3 = birthYear => 2019 - birthYear;
+// console.log( age3(1966) );
+
+//When having 2 or more arguments and one line of code
+let age4 = (currentYear, birthYear) => currentYear - birthYear;
+// console.log( age4(2019, 1966) );
+
+//When having 2 or more lines of code
+let age5 = (birthYear) => {
+  let currentYear = new Date().getFullYear(); //console.log(currentYear);
+  return currentYear - birthYear; //will return the age
+}
+// console.log( age5(1966) );
+
+//A function without any arguments
+function bob() {
+  return "I'm Bob !";
+}
+let bob1 = () => "I'm Bob !"; // console.log( bob1() );
+let bob2 = "I'm Bob !"; // console.log( bob2 );
+
+//----------------------
+
+//ES2015 Template literals
+let n = 45;
+let name = "Dolores";
+//My name is Dolores and I'm 45 years old.;
+
+//The classic way to concatenate strings and variables
+let phrase = "My name is " + name + " and I'm " + n + " years old.";
+console.log(phrase);
+
+//The new way with template literals
+let newPhrase = `My name is ${name} 'and" I'm ${n + 6} years old.`;
+console.log(newPhrase);
