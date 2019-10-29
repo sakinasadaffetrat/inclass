@@ -273,11 +273,11 @@ let listen = {
 
     addTodo.addEventListener('keypress', function(event) {
 
-      //console.log(event.key);
+      console.log(event.key);
 
       //Detect ENTER key
-      if(event.key === 'Enter' || event.which == 13 || event.keyCode == 13) {
-
+      if(event.which == 13 || event.keyCode == 13) {
+ 
         if(! handlers.isEmpty(addTodo)) {
           todos.addTodo(this.value); //in this context "this" is the DOM element ("#add-todo") !
           this.value = '';

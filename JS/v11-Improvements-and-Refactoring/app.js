@@ -6,22 +6,22 @@ let todos = {
   //MY TODO LIST - PROPERTY
   list : [
 
-    // {
-    //   text: "Learn HTML5",
-    //   completed: true
-    // },
-    // {
-    //   text: "Learn CSS",
-    //   completed: true
-    // },
-    // {
-    //   text: "Learn JS",
-    //   completed: false
-    // },
-    // {
-    //   text: "Learn PHP",
-    //   completed: false
-    // }
+    {
+      text: "Learn HTML5",
+      completed: true
+    },
+    {
+      text: "Learn CSS",
+      completed: true
+    },
+    {
+      text: "Learn JS",
+      completed: false
+    },
+    {
+      text: "Learn PHP",
+      completed: false
+    }
 
   ],
 
@@ -187,8 +187,9 @@ let view = {
       let li = document.createElement('li');
       
       //2. Put todo status and text inside LI 
-      let completedStr = (item.completed) ? "(x)" : "( )";
-      li.innerHTML = completedStr + "&nbsp;&nbsp;" + item.text;
+      let completedStr = (item.completed) ? "(x)" : "(&nbsp;&nbsp;)";
+      
+      li.innerHTML = '<a href="#" id="' + index + '">' + completedStr + "&nbsp;&nbsp;" + item.text + '</a>';
       
       //3. Create the delete button
       let deleteBtn = document.createElement('button');
@@ -230,6 +231,12 @@ let listen = {
         if(confirm("Are you sure ?")) {
           todos.deleteTodo(elemClicked.id);
         }
+      }
+
+      //IF clicked element is a A tag
+      if(elemClicked.tagName === 'A') {
+        event.preventDefault();
+        todos.toggleTodo(elemClicked.id);
       }
 
     });
