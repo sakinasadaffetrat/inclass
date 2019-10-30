@@ -1,0 +1,185 @@
+ /*	Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+-------------------------------------------------------------------------- */
+/*#region RESET*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+/* Make box-sizing "border-box" as default */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*#endregion*/
+
+
+
+
+/* MAIN TAGS FORMATTING
+===================================================================================*/
+/*#region MAIN TAGS*/
+/* REFERENCE SIZE FOR FONTS
+ * We can use html{} ou :root{}
+----------------------------------------------*/
+html {
+  font-size: 17px;
+	scroll-behavior: smooth; /*optional*/
+}
+
+
+/* FONT - Default properties
+----------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'Lato', sans-serif;
+	font-size: 1em;
+	font-weight: 300; /*this is a "light" weight*/
+	letter-spacing: 0.025em;
+	line-height: 1.6em;
+	color: #333;
+}
+
+
+/* TITLES
+----------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+	font-weight: 300;
+	line-height: 1.75em;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+}
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+	margin-bottom: 0;
+}
+h2 {
+  font-weight: 400;
+  font-size: 1.3em;
+	letter-spacing: 0.03em;
+}
+h3 {
+	font-size: 1.1em;
+	font-weight: 400;
+}
+
+
+/* PARAGRAPHS
+----------------------------------------------*/
+p {
+  margin-bottom: 1em;
+}
+
+
+/* LINKS
+----------------------------------------------*/
+a {
+  text-decoration: none;
+	outline: none;
+	color: inherit; /*#3fb1a3*/
+}
+p a {
+	border-bottom: dotted 1px;
+	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+p a:hover {
+	border-bottom-color: transparent;
+}
+
+
+/* STANDARD TAGS for bold
+----------------------------------------------*/
+strong, b {
+	font-weight: 400;
+}
+
+
+/* IMAGES
+----------------------------------------------*/
+img {
+	display: block;
+  width: 100%;
+  height: auto;
+  
+}
+
+
+/* FORM ELEMENTS
+----------------------------------------------*/
+input,
+select {
+  width: 200px;
+}
+label {
+  display: inline-block;
+  width: 100%;
+  max-width: 100px;
+}
+
+
+/* SELECTIONS, PLACEHOLDERS
+----------------------------------------------*/
+/*Document selection*/
+::selection {
+	background-color: #282e3e;
+	color:#fff;
+}
+
+/*Form elements placeholders*/
+::placeholder {
+	color:#ccc;
+}
+/*#endregion*/
+
+
+
+
+/* HELPER CLASSES - Useful classes to speed up the design
+===================================================================================*/
+/*#region HELPER CLASSES*/
+/*Font*/
+
+
+/*Margins and Paddings*/
+
+
+/*Rows and Columns*/
+
+
+/*Header with borders top-bottom helper*/
+
+
+/*Scale when hover helper*/
+
+/*#endregion*/
+
+
+
+/* LAYOUT
+===================================================================================*/
+/*#region LAYOUT*/
+/* COMMON
+----------------------------------------------*/
+/*Header*/
+
+
+/*Main*/
+
+
+/*Sections*/
+
+
+/* MENU
+--------------------------------------------------*/
+
+/*#endregion*/
