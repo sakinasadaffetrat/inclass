@@ -7,15 +7,20 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
   <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body class="_menu-is-open">
 
-  <header id="top-header" class="row">
+  <header id="top-header" class="top-header row">
 
       <figure id="logo" class="font700">
         <a href="index.html">A-LOGO</a>
       </figure>
-      
-      <nav id="main-nav" class="nav">
+
+      <div id="nav-triggers" class="nav-triggers">
+        <a id="open-menu" class="open-menu trigger"><img src="img/burger-icon.svg" alt="burger icon"></a>
+        <a id="close-menu" class="close-menu trigger"><img src="img/close-icon.svg" alt="close icon"></a>
+      </div>
+
+      <nav id="main-nav" class="main-nav">
         <ul id="menu" class="menu row">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">Work</a></li>
@@ -28,7 +33,7 @@
 
   <main>
 
-    <header>
+    <header class="AC">
       <div class="deco-title">
         <h1 id="main-title" class="main-title">Remember CSS ?</h1>
         <h2 class="font300 M0">And after... the star attraction: <strong>jQuery</strong></h2>
@@ -38,23 +43,23 @@
     <section id="section-1" class="section">
       <h2>This is section 1</h2>
       <div class="row container half">
-        <div class="col lg-col-2">
+        <div class="col col-2">
           <p><a href="#">Lorem ipsum dolor sit amet</a>, consectetur adipiscing elit. Vestibulum ac luctus metus. Maecenas dapibus turpis massa, a venenatis arcu elementum nec.</p>
           <p>Aliquam erat volutpat. Aliquam a lacus pretium, fermentum justo vitae, maximus nisi. Proin consequat massa eget est semper, quis suscipit ligula vulputate.</p>
         </div>
-        <div class="col lg-col-2">
+        <div class="col col-2">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac luctus metus. Maecenas dapibus turpis massa, a venenatis arcu elementum nec.</p>
           <p>Aliquam erat volutpat. <a href="#">Aliquam a lacus pretium</a>, fermentum justo vitae, maximus nisi. Proin consequat massa eget est semper, quis suscipit ligula vulputate.</p>
         </div>
       </div>
     </section>
 
-    <section id="section-2" class="section">
+    <section id="section-2" class="section images">
       <h2>This is section 2</h2>
-      <figure class="row container">
-        <a href="#" class="lg-col-3 scale"><img src="img/unsplash-01.jpg" alt="Rusty"></a>
-        <a href="#" class="lg-col-3 scale"><img src="img/unsplash-02.jpg" alt="Mini houses"></a>
-        <a href="#" class="lg-col-3 scale"><img src="img/unsplash-03.jpg" alt="Terra colors"></a>
+      <figure class="row">
+        <a href="#" class="col-3 scale"><img src="img/unsplash-01.jpg" alt="Rusty"></a>
+        <a href="#" class="col-3 scale"><img src="img/unsplash-02.jpg" alt="Mini houses"></a>
+        <a href="#" class="col-3 scale"><img src="img/unsplash-03.jpg" alt="Terra colors"></a>
       </figure>
     </section>
 
@@ -84,7 +89,7 @@
 
   </main>
 
-  <footer>
+  <footer class="AC">
     <p>some &copy;2019 by nobody</p>
   </footer>
 
