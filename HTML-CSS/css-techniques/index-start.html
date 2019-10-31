@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remember CSS ?</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,600">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
   <link rel="stylesheet" href="main-start.css">
 </head>
+
 <body>
 
-  <header>
-
-      <figure id="logo" class="font600">
+  <header id="top-header" class="top-header row">
+      
+      <figure id="logo" class="font700">
         <a href="index.html">A-LOGO</a>
       </figure>
+
       <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
+        <ul class="menu row font400">
+          <li class="active"><a href="#">Home</a></li>
           <li><a href="#">Work</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
@@ -28,7 +30,7 @@
   <main>
 
     <header>
-      <div>
+      <div class="deco-title AC">
         <h1>Remember CSS ?</h1>
         <h2>And after... the star attraction: <strong>jQuery</strong></h2>
       </div>
@@ -83,12 +85,14 @@
 
   </main>
 
-  <footer>
+  <footer class="AC">
     <p>some &copy;2019 by nobody</p>
   </footer>
 
+  <!--
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
   <script src="main.js"></script>
+  -->
 
 </body>
 </html>
