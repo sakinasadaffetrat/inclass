@@ -162,7 +162,9 @@ label {
 }
 
 /*Margins and Paddings*/
-
+.M0 {
+	margin: 0;
+}
 
 /*Rows and Columns*/
 .row {
@@ -170,15 +172,31 @@ label {
 	justify-content: space-between; /*horizontal alignment*/
 	align-items: center; /*vertical alignment*/
 }
+.col-2 {
+	width: 45%;
+}
+.col-3 {
+	width: 30%;
+}
 
 /*Header with borders top-bottom helper*/
 .deco-title {
+	display: inline-block;
+	padding: 1em;
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 }
 
 /*Scale when hover helper*/
-
+.scale {
+	overflow: hidden;
+}
+.scale img {
+	transition: transform .4s ease;
+}
+.scale img:hover {
+	transform: scale(1.5) rotate(10deg);
+}
 /*#endregion*/
 
 
@@ -193,13 +211,16 @@ label {
 	/* background-color: #fc0; */
 	padding: 1em 4%;
 	border-bottom: solid 1px #e5e5e5;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 
 /*Main*/
 main {
 	max-width: 1024px;
 	margin: 0 auto 3em;
+}
+.main-header {
+	margin-bottom: 3em;
 }
 
 /*Sections*/
