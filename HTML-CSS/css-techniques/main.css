@@ -113,16 +113,6 @@ img {
   
 }
 
-.scale {
-  overflow: hidden;
-}
-.scale img {
-  transition: transform .3s ease;
-}
-.scale img:hover {
-  transform: scale(1.1); /*rotate(3deg)*/
-}
-
 
 /* FORM ELEMENTS
 ----------------------------------------------*/
@@ -164,14 +154,20 @@ label {
 .font400 {
   font-weight: 400;
 }
-.font600 {
+.font700 {
   font-weight: 700;
 }
+
+.AC {
+  text-align: center;
+}
+
 
 /*Margins and Paddings*/
 .M0 {
   margin: 0;
 }
+
 
 /*Rows and Columns*/
 .row {
@@ -188,12 +184,13 @@ form .row,
   justify-content: flex-end;
   text-align: right;
 }
-.container .lg-col-2 {
+.col-2 {
   width: 45%;
 }
-.container .lg-col-3 {
+.col-3 {
   width: 30%;
 }
+
 
 /*Header with borders top-bottom*/
 .deco-title {
@@ -204,28 +201,35 @@ form .row,
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
 }
+
+
+/*Scale when hover helper*/
+.scale {
+	overflow: hidden;
+}
+.scale img {
+	transition: transform .4s ease;
+}
+.scale img:hover {
+	transform: scale(1.5) rotate(10deg);
+}
 /*#endregion*/
 
 
 
-/* LAYOUT
+/* LAYOUT - DESKTOP FIRST STYLES
 ===================================================================================*/
 /*#region LAYOUT*/
 /* COMMON
 ----------------------------------------------*/
 /*Header*/
-main header,
+header,
 footer {
-  text-align: center;
   padding: 1em 4%;
 }
 
 header {
   margin: 0 0 2em;
-}
-#top-row {
-  padding: 1em 4%;
-  border-bottom: solid 1px #e5e5e5;
 }
 
 /*Main*/
@@ -241,6 +245,14 @@ section {
   margin-bottom: 3em;
 }
 
+
+/* TOP HEADER
+--------------------------------------------------*/
+.top-header {
+  border-bottom: solid 1px #e5e5e5;
+}
+
+
 /* MENU
 --------------------------------------------------*/
 .menu li {
@@ -248,23 +260,204 @@ section {
   display: inline-block;
   position: relative;
 }
-.menu li.active::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #000;
+.menu li.active{
+  border-top: solid 1px #000;
 }
 .menu a {
   text-transform: uppercase;
   border: 0;
-  font-size: .9em;
+  font-size: .88235em; /*the goal is 15px*/
   font-weight: 400;
   color: #8a8a8a;
+  transition: color .3s ease;
 }
 .menu a:hover,
 .menu .active a {
   color: #000;
 }
 
+/*NAV TRIGGERS - Hide this for Desktops*/
+.nav-triggers {
+  display: none;
+}
 /*#endregion*/
+
+
+
+/* MEDIA QUERIES (REMEMBER! This is DESKTOP FIRST (so, use "max-width")
+===================================================================================*/
+/*#region MEDIA QUERIES*/
+/*TABLETS*/
+@media (max-width: 800px) {
+
+  /*Change the root font-size*/
+  html {
+    font-size: 18px;
+  }
+
+  /*Hide the main nav*/
+  .main-nav {
+    display: none;
+  }
+
+
+  /* NAV TRIGGERS
+  ---------------------------------------------*/
+  /*#region*/
+  /*Mobile menus triggers container*/
+  .nav-triggers {
+    width: 44px;
+    height: 44px;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    /* background: #fc0; */
+  }
+
+  /*Common for both triggers*/
+  .trigger {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: position .3s ease;
+  }
+  .trigger img {
+    max-width: 60%;
+  }
+
+
+  /* WHEN MENU IS CLOSE
+  -------------------------------*/
+  .close-menu {
+    left: -44px;
+  }
+
+
+  /* WHEN MENU IS OPEN
+  -------------------------------*/
+  /* if you want to block the scroll when the menu is open do this: */
+  body.menu-is-open {
+    overflow: hidden;
+  }
+
+  /* if you don't block the scroll, use do this: */
+  /*
+  .menu-is-open .top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  */
+
+  /*If you want to see the logo when menu is open*/
+  .menu-is-open .logo {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .menu-is-open .open-menu {
+    left: -44px;
+  }
+  .menu-is-open .close-menu {
+    left: 0;
+    filter: invert(1);
+  }
+  /*#endregion*/
+
+
+  /* MOBILE MENU
+  ---------------------------------------------*/
+  /*#region*/
+  .menu-is-open .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0,0,0,.95);
+  }
+  .main-nav .menu {
+    display: block; /*this will the flex display of the row*/
+    text-align: center;
+  }
+  .menu li {
+    display: block;
+  }
+  .menu li a,
+  .menu li.active a {
+    display: block;
+    padding: 1em 4%;
+    color: #888;
+
+    font-size: 5vw;
+  }
+  .menu li.active a,
+  .menu li a:hover {
+    color: #fff;
+  }
+  .menu li.active {
+    border-top: 0;
+  }
+  /*#endregion*/
+
+
+  /* LAYOUT FOR MOBILE DEVICES. Let's see...
+  ---------------------------------------------*/
+  /*#region*/
+  /*We want all display flexes (.row class) to be block, except for the top header*/
+  .row:not(.top-header) {
+    display: block; /* Try also  flex-direction: column;*/
+  }
+
+  .col-2, .col-3 {
+    width: 100%;
+  }
+
+  .images {
+
+  }
+  .scale {
+    display: block; /*margin will not work on an inline element*/
+    margin-bottom: 2em;
+  }
+  .scale img:hover {
+    transform: none;
+  }
+  /*#endregion*/
+
+}
+
+
+/*PHONES*/
+@media (max-width: 480px) {
+
+  section {
+    text-align: center;
+  }
+
+}
+/*#endregion MEDIA QUERIES*/
