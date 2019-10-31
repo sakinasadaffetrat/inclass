@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
   <link rel="stylesheet" href="main.css">
 </head>
-<body class="_menu-is-open">
+
+<body>
 
   <header id="top-header" class="top-header row">
 
-      <figure id="logo" class="font700">
+      <figure id="logo" class="logo font700">
         <a href="index.html">A-LOGO</a>
       </figure>
 
@@ -93,10 +94,34 @@
     <p>some &copy;2019 by nobody</p>
   </footer>
 
-  <!--
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="main.js"></script>
-  -->
+  
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script> -->
+  <!-- <script src="main.js"></script> -->
+
+  <script>
+    //VANILLA JS VARIANTE
+    const body = document.querySelector("body");
+    const openMenu = document.querySelector("#open-menu");
+    const closeMenu = document.querySelector("#close-menu");
+
+    openMenu.addEventListener('click', function(event) {
+      body.classList.add('menu-is-open');
+    });
+    closeMenu.addEventListener('click', function(event) {
+      body.classList.remove('menu-is-open');
+    });
+
+
+    //jQuery VARIANTE (if activated above)
+    /*
+    $('#open-menu').on('click', function() {
+      $('body').addClass('menu-is-open');
+    });
+    $('#close-menu').on('click', function() {
+      $('body').removeClass('menu-is-open');
+    });
+    */
+  </script>
 
 </body>
 </html>
