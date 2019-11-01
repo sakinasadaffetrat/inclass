@@ -237,9 +237,39 @@ section {
 	text-transform: uppercase;
 	font-size: 0.88235em;
 	color: #8a8a8a;
+	transition: color .3s;
+}
+.menu li:hover {
+	color: #000;
 }
 .menu li.active {
 	border-top: solid 1px #000;
 	color: #000;
+}
+
+
+/* NAV TRIGGERS FOR MOBILES
+-----------------------------------*/
+#nav-triggers {
+	display: none;
+}
+/*#endregion*/
+
+
+/* MEDIA QUERIES
+===================================================================================*/
+/*#region MEDIA QUERIES*/
+@media (max-width: 800px) {
+
+	/*Hide the nav*/
+	#main-nav {
+		display: none;
+	}
+
+	/*Show the nav triggers*/
+	#nav-triggers {
+		display: block;
+	}
+
 }
 /*#endregion*/
