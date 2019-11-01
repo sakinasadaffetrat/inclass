@@ -107,12 +107,23 @@
     openMenu.addEventListener('click', function(event) {
       body.classList.add('menu-is-open');
     });
+
     closeMenu.addEventListener('click', function(event) {
       body.classList.remove('menu-is-open');
     });
 
+    window.addEventListener('scroll', function(event) {
+      scrollPos = window.scrollY; //console.log(scrollPos);
 
-    //jQuery VARIANTE (if activated above)
+      if(scrollPos > 81) {
+        body.classList.add('header-is-fixed');
+      }
+      else {
+        body.classList.remove('header-is-fixed');
+      }
+    });
+
+    //jQuery VARIANTE (if library activated above)
     /*
     $('#open-menu').on('click', function() {
       $('body').addClass('menu-is-open');
