@@ -225,7 +225,7 @@ form .row,
 /*Header*/
 header,
 footer {
-  padding: 1em 4%;
+  padding: 2vh 4%;
 }
 
 header {
@@ -236,6 +236,9 @@ header {
 main {
   max-width: 1024px;
   margin: 0 auto;
+}
+.header-is-fixed main {
+  margin-top: 6.4em;
 }
 
 /*Sections*/
@@ -249,7 +252,15 @@ section {
 /* TOP HEADER
 --------------------------------------------------*/
 .top-header {
+  min-height: 9vh;
   border-bottom: solid 1px #e5e5e5;
+}
+.header-is-fixed .top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,.95);
 }
 
 
@@ -260,7 +271,7 @@ section {
   display: inline-block;
   position: relative;
 }
-.menu li.active{
+.menu li.active {
   border-top: solid 1px #000;
 }
 .menu a {
@@ -293,11 +304,6 @@ section {
   /*Change the root font-size*/
   html {
     font-size: 18px;
-  }
-
-  /*Hide the main nav*/
-  .main-nav {
-    display: none;
   }
 
 
@@ -386,7 +392,8 @@ section {
   /* MOBILE MENU
   ---------------------------------------------*/
   /*#region*/
-  .menu-is-open .main-nav {
+  .main-nav {
+    /* display: none; */ /*Only if not using opacity or some animation*/
     position: fixed;
     top: 0;
     left: 0;
@@ -399,7 +406,17 @@ section {
     align-items: center;
 
     background-color: rgba(0,0,0,.95);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity .6s ease;
   }
+  .menu-is-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .main-nav .menu {
     display: block; /*this will the flex display of the row*/
     text-align: center;
