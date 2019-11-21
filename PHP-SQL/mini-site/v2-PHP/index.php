@@ -1,13 +1,12 @@
 <?php
-$page = $_GET['page'];
-echo $page;
+  include("app.php");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Where hardest stuff is possible</title>
+  <title><?php echo pages($page, 'head'); ?></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="How to use PHP to create a dynamic website">
@@ -33,9 +32,7 @@ echo $page;
     <!-- Nav -->
     <nav class="nav">
       <ul class="menu">
-        <li class="menu-item active"><a href="?page=index">HOME</a></li>
-        <li class="menu-item"><a href="?page=work">WORK</a></li>
-        <li class="menu-item"><a href="?page=contact">CONTACT</a></li>
+        <?php pages($page, 'menus'); ?>
       </ul>
     </nav>
 
@@ -44,7 +41,7 @@ echo $page;
 
   <!-- CONTENT -->
   <main class="content">
-    <?php include("html/" . $page . ".html") ?>
+    <?php include("html/$page.html"); ?>
   </main>
 
 
