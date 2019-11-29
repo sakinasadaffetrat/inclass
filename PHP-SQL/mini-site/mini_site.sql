@@ -104,7 +104,7 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'Sorin Paun', 'sorin.paun@powercoders.org', '$2y$10$ZEDYjYsgaM5wuaGbgQZKR.4z5aLp7X0zVbgGhJhxEKtG3MyKZrbti');
+INSERT INTO `users` VALUES (1, 'Your Name', 'your.email@powercoders.org', 'some-password-hash');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
