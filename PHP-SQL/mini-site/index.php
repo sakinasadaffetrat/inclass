@@ -13,11 +13,7 @@
     <li><a href="v3-Friendly-URL/">v3-Friendly-URL/</a></li>
     <li><a href="v4-Data-Storage/">v4-Data-Storage/</a></li>
     <li><a href="v5-DB-Queries/">v5-DB-Queries</a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
+    <li><a href="v6-Admin/">v6-Admin</a></li>
   </ul>
 </body>
 </html>
