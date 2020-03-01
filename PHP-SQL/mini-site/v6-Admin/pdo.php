@@ -9,7 +9,7 @@
 /* DB INFO
 ------------------------------------------*/
 $db_host    = '127.0.0.1';
-$db_name    = 'poco_minisite_2';
+$db_name    = 'poco_minisite';
 $db_user    = 'root';
 $db_pass    = ''; //On XAMPP by default is '' → empty string; on XAMPP & MAMP by default is 'root'
 $db_charset = 'utf8mb4';
