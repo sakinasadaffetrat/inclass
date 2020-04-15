@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Din-Light';
+  src: url('fonts/din-light-webfont.woff2') format('woff2'),
+       url('fonts/din-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Din-Light', serif;
+}
+
+.bold {
+  font-weight: 500;
+}
