@@ -1,4 +1,4 @@
-/* RESET
+/* RESET - Eric Meyer
 ----------------------------------------------*/
 /* #region */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
@@ -13,6 +13,7 @@ html {
 
 
 /* BASIC FORMATTING
+ * Here I format the default behavior for the main tags
 ----------------------------------------------*/
 html {
   font-size: 16px;
@@ -25,6 +26,26 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
+/*EM
+1em = 100% of the font-size of the parent
+1rem = 100% of the root element
+*/
+
+/*24px*/
+/*
+header {
+  font-size: 1.5em; 
+}
+*/
+/*48px*/
+/* header h2 {
+  font-size: 2em; 
+}
+*/
+
+
+
 
 
 /*LINKS*/
@@ -52,10 +73,15 @@ input, input:focus {
 h1,
 h2 {
   font-weight: bold;
+  font-family: serif;
 }
 
 p {
   margin-bottom: 1em; /*16px*/
+}
+
+img {
+
 }
 
 
@@ -64,7 +90,91 @@ p {
 
 
 /* HELPER CLASSES
+ * DRY - Don't repeat yourself !
 ----------------------------------------------*/
+/*Typography
+--------------------------*/
+/*Font families*/
+.lato {
+  font-family: Lato, whatever;
+}
+.roboto {
+  /*...*/
+}
+
+/*Font weights*/
+.bold {
+  font-weight: bold;
+}
+
+/*Font sizes*/
+.fs-1 {
+  font-size: 1rem;
+}
+.fs-2 {
+  font-size: 1.25rem;
+}
+
+/*Line heights*/
+.lh-1 {
+  line-height: 1;
+}
+.lh-1-2 {
+  line-height: 1.2;
+}
+
+/*Colors*/
+.red {
+  color: red;
+}
+.blue {
+ color: blue;
+}
+
+/* MARGINS
+--------------------------*/
+.m-t-1 {
+  margin-top: 1em;
+}
+.m-t-2 {
+  margin-top: 1.25em;
+}
+.m-t-3 {
+  margin-top: 1.5em;
+}
+.m-t-4 {
+  margin-top: 1.75em;
+}
+.m-t-5 {
+  margin-top: 2em;
+}
+
+.m-b-1 {
+  margin-bottom: 1em;
+}
+.m-b-2 {
+  margin-bottom: 1.25em;
+}
+.m-b-3 {
+  margin-bottom: 1.5em;
+}
+.m-b-4 {
+  margin-bottom: 1.75em;
+}
+.m-b-5 {
+  margin-bottom: 2em;
+}
+
+/* PADDINGS*
+--------------------------*/
+
+
+/* FLEX
+--------------------------*/
+
+
+/* BACKGROUNDS
+--------------------------*/
 
 
 
