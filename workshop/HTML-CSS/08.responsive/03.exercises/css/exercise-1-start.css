@@ -1,0 +1,67 @@
+/*DESKTOP FIRST APPROACH*/
+body {
+  background-color: #ccc;
+}
+h1 {
+  text-align: center;
+  padding: 3em 5%;
+  font-size: 2em;
+  background-color: salmon;
+}
+
+
+/* MEDIA QUERIES
+----------------------------------------*/
+@media (max-width: 1024px) {
+
+  body {
+    background-color: skyblue;
+  }
+
+  h1 {
+    background-color: tan;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  body {
+    background-color: yellowgreen;
+  }
+
+  h1 {
+    background-color: olive;
+  }
+  
+}
+
+
+@media (max-width: 480px) {
+
+  body {
+    background-color: #e5e5e5;
+  }
+
+  h1 {
+    background-color: #fc0;
+  }
+  
+}
+
+
+@media print {
+
+  body {
+    font-family: serif;
+    font-size: 11pt;
+    background: none;
+  }
+
+  h1 {
+    text-align: left;
+    background: none;
+  }
+
+}
