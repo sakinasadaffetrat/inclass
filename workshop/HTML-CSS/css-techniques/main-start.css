@@ -126,13 +126,28 @@ img {
 /* FORM ELEMENTS
 ----------------------------------------------*/
 input,
-select {
+select,
+textarea {
   width: 200px;
 }
 label {
   display: inline-block;
-  width: 100%;
-  max-width: 100px;
+	width: 100%;
+	min-width: 140px;
+  max-width: 15%;
+}
+
+textarea {
+	width: 50%;
+	height: 9em;
+	resize: vertical;
+}
+input[type="checkbox"], input[type="radio"] {
+	width: auto;
+}
+
+form p * {
+	vertical-align: top;
 }
 
 
@@ -197,7 +212,6 @@ input:focus::placeholder {
 .col-2 {
 	width: 48%;
 	margin-bottom: 4%;
-	background-color: #fc0;
 }
 .col-3 {
 	width: 30%;
@@ -209,14 +223,23 @@ input:focus::placeholder {
 }
 
 /*Scale when hover helper*/
+.square a {
+	height: 30%;
+	background-color: rosybrown;
+}
+
 .scale {
-	
+	display: block;
+	overflow: hidden;
+	border-radius: 50%;
+	border: solid 5px #000;
 }
 .scale img {
-	
+	width: 150%;
+	transition: transform .3s ease;
 }
 .scale img:hover {
-	
+	transform: scale(1.3) rotate(5deg);
 }
 /*#endregion*/
 
@@ -317,7 +340,6 @@ section p:last-child {
 		width: 44px;
 		height: 44px;
 		overflow: hidden;
-		background-color: #fc0;
 	}
 	#nav-triggers a {
 		display: flex;
@@ -360,7 +382,6 @@ section p:last-child {
 		width: 100%;
 		max-width: 150px;
 		text-align: center;
-		background-color: #fc0;
 	}
 
 	.menu.row {

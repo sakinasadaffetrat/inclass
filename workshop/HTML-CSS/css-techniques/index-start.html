@@ -76,10 +76,16 @@
 
     <section id="section-2">
       <h2>This is section 2</h2>
-      <figure class="row">
-        <a class="col-3 scale" href="#"><img src="img/unsplash-01.jpg" alt="Rusty"></a>
-        <a class="col-3 scale" href="#"><img src="img/unsplash-02.jpg" alt="Mini houses"></a>
-        <a class="col-3 scale" href="#"><img src="img/unsplash-03.jpg" alt="Terra colors"></a>
+      <figure class="row square">
+        <a class="col-3 scale" href="#">
+          <img src="img/unsplash-01.jpg" alt="Rusty">
+        </a>
+        <a class="col-3 scale" href="#">
+          <img src="img/unsplash-02.jpg" alt="Mini houses">
+        </a>
+        <a class="col-3 scale" href="#">
+          <img src="img/unsplash-03.jpg" alt="Terra colors">
+        </a>
       </figure>
     </section>
 
@@ -99,6 +105,45 @@
         <p>
           <label for="pass">Password:</label>
           <input type="password" name="pass" id="pass" required>
+        </p>
+        <p>
+          <label for="msg">Password:</label>
+          <textarea name="pass" id="msg"></textarea>
+        </p>
+        <p>
+          <label for="country">Country</label>
+          <select name="" id="country" multiple size="5">
+            <option>...</option>
+            <option value="CH" selected>Swiss</option>
+            <option value="RO">Romania</option>
+            <option value="FR">France</option>
+            <option value="TR">Turkey</option>
+          </select>
+        </p>
+        <p>
+          <div>Are you ?<input type="checkbox"></div>
+          <div>Are you ?<input type="checkbox"></div>
+          <div>Are you ?<input type="checkbox"></div>
+          <div>Are you ?<input type="checkbox"></div>
+        </p>
+
+        <p>
+          <label for="msg">Number:</label>
+          <input type="number">
+        </p>
+        <p>
+          <label for="msg">Choose your way of life:</label>
+          sleeping <input name="bob" type="radio" value="sleeping"> 
+          skiing <input name="bob" type="radio" value="skiing"> 
+          eating <input name="bob" type="radio" value="eating">
+        </p>
+        <p>
+          <label for="msg">Choose your way of life:</label>
+          <input type="color">
+        </p>
+        <p>
+          <label for="msg">Choose your way of life:</label>
+          <input type="range">
         </p>
         <p>
           <label></label>
