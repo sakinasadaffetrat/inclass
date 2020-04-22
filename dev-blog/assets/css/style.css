@@ -1,63 +1,51 @@
-/* RESET - Eric Meyer
-----------------------------------------------*/
-/* #region */
+ /*	Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+-------------------------------------------------------------------------- */
+/*#region*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
 
-/*Make the box model border-box by default*/
+
+/* Make box-sizing "border-box" as default */
 html {
   box-sizing: border-box;
 }
-/* #endregion */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*#endregion*/
 
 
 
 
 /* BASIC FORMATTING
  * Here I format the default behavior for the main tags
-----------------------------------------------*/
+-------------------------------------------------------------------------- */
+/*#region*/
 html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
+  font-family: Roboto, sans-serif;
   font-size: 1rem;
-  font-family: sans-serif;
-  color: #212121;
+  color: #4f4f4f;
   line-height: 1.5;
 }
-
-/*EM
-1em = 100% of the font-size of the parent
-1rem = 100% of the root element
-*/
-
-/*24px*/
-/*
-header {
-  font-size: 1.5em; 
+main {
+  font-size: 0.875rem;
 }
-*/
-/*48px*/
-/* header h2 {
-  font-size: 2em; 
-}
-*/
-
-
-
-
 
 /*LINKS*/
 a {
   text-decoration: none;
-  color: coral;
+  color: #5FCB71;
   outline: none;
   transition: color 1s ease;
 }
 a:hover {
-  color: darkred;
+  text-decoration: underline;
 }
+
 
 /*FORM ELEMENTS*/
 button {
@@ -70,33 +58,36 @@ input, input:focus {
 }
 
 /*TITLES*/
-h1,
-h2 {
-  font-weight: bold;
-  font-family: serif;
+h1 {
+  font-size: 2em;
 }
 
-p {
-  margin-bottom: 1em; /*16px*/
+main p {
+  margin-bottom: 0.875rem; /*14px*/
+}
+.index main p {
+  margin: 0;
 }
 
 img {
-
+  display: block;
+  width: 100%;
+  height: auto;
 }
-
-
+/*#endregion*/
 
 
 
 
 /* HELPER CLASSES
  * DRY - Don't repeat yourself !
-----------------------------------------------*/
+-------------------------------------------------------------------------- */
+/*#region*/
 /*Typography
 --------------------------*/
 /*Font families*/
 .lato {
-  font-family: Lato, whatever;
+  
 }
 .roboto {
   /*...*/
@@ -131,8 +122,21 @@ img {
  color: blue;
 }
 
+.center {
+  text-align: center;
+}
+
+
 /* MARGINS
 --------------------------*/
+.m0 {
+  margin: 0;
+}
+.mx {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .m-t-1 {
   margin-top: 1em;
 }
@@ -165,25 +169,119 @@ img {
   margin-bottom: 2em;
 }
 
+
 /* PADDINGS*
 --------------------------*/
 
 
+
 /* FLEX
 --------------------------*/
+.flex {
+  display: flex;
+}
+
 
 
 /* BACKGROUNDS
 --------------------------*/
 
+/*#endregion*/
+
 
 
 
 /* LAYOUT
-----------------------------------------------*/
+-------------------------------------------------------------------------- */
+/*#region*/
+/* LEFT CONTENT
+-----------------------------------*/
+.left-content {
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding: 2rem 1rem;
+
+  color: #fff;
+  background-color: #5FCB71;
+}
+.left-content,
+.left-content a,
+.left-content button {
+  
+}
+
+/*Profile*/
+.profile {
+  border-bottom: solid 1px #5AC16B;
+  padding-bottom: 2rem;
+}
+
+.profile-picture {
+  overflow: auto;
+  width: 160px;
+  height: 160px;
+}
+.profile-picture img {
+  border-radius: 50%;
+}
+
+
+/* RIGHT CONTENT
+-----------------------------------*/
+.right-content {
+  padding-left: 280px;
+}
+
+
+/* HEADER
+------------------------*/
+.header {
+  padding: 3rem 0 4rem;
+  background-color: #FAFAFA;
+}
+
+
+/* MAIN
+------------------------*/
+.main {
+  max-width: 820px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.blog-item {
+  margin-bottom: 3rem;
+}
+
+.blog-item figure {
+  width: 100%;
+  max-width: 110px;
+  margin-right: 1rem;
+}
+
+
+
+
+/* FOOTER
+------------------------*/
+.footer {
+  padding: .8rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #223142;
+}
+/*#endregion*/
 
 
 
 
 /* MEDIA QUERIES
-----------------------------------------------*/
+-------------------------------------------------------------------------- */
+/*#region*/
+
+/*#endregion*/

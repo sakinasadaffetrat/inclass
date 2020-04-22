@@ -6,39 +6,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorin's Dev Blog</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/icons/style.css">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
-  <body>
-    <aside>
-      <header>
-        <h2>Sorin's Blog</h2>
-        <figure>
-          <img src="xxxx" alt="Sorin's face">
-          <figcaption>asdasdasdasd</figcaption>
-        </figure>
+  <body class="index">
 
-        <figure>
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
-          <img src="" alt="">
+    <aside class="left-content center">
+
+      <header class="profile">
+        <h2>Sorin's Blog</h2>
+        <figure class="profile-picture mx">
+          <img src="assets/img/profile_picture.jpg" alt="Sorin's face">
+        </figure>
+        <p>
+          Hi, my name is Sorin Paun. I'm a apprentice programmer.<br>
+          <a href="about.html">Find out more about me</a>
+        </p>
+        <figure class="profile-social">
+          <i class="icon-twitter"></i>
+          <i class="icon-linkedin"></i>
+          <i class="icon-github"></i>
+          <i class="icon-stack-overflow"></i>
+          <i class="icon-codepen"></i>
         </figure>
       </header>
 
-      <nav>
-        <ul>
+      <nav class="nav">
+        <ul class="menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">Post blogs</a></li>
           <li><a href="#">About</a></li>
         </ul>
       </nav>
-      <p><button>Get in touch</button></p>
+
+      <p class="btn-contact"><button>Get in touch</button></p>
     </aside>
 
-    <main>
-      <header>
+    <div class="right-content">
+    
+      <header class="header center">
         <h1>Dev Blog</h1>
         <p class="courier">This is my blog sub</p>
         <form action="">
@@ -47,41 +55,79 @@
         </form>
       </header>
 
-      <section>
-        <figure>
-          <img src="" alt="my image">
-        </figure>
-        <h2>Section Title</h2>
-        <small class="courier">Published date</small>
-        <p>Some description here...</p>
-        <p><a href="post-3.html">Read more...</a></p>
-      </section>
+      <main class="main">
 
-      <section>
-        <figure>
-          <img src="" alt="my image">
-        </figure>
-        <h2>Section Title</h2>
-        <small>Published date</small>
-        <p>Some description here...</p>
-        <p><a href="post-3.html">Read more...</a></p>
-      </section>
+        <!-- BLOG ITEM -->
+        <section class="blog-item flex">
 
-      <section>
-        <figure>
-          <img src="" alt="my image">
-        </figure>
-        <h2>Section Title</h2>
-        <small>Published date</small>
-        <p>Some description here...</p>
-        <p><a href="post-3.html">Read more...</a></p>
-      </section>
-      
-    </main>
+          <figure>
+            <img src="assets/img/blog/blog-post-thumb-1.jpg" alt="my image">
+          </figure>
 
-    <footer>
-      <p class="courier bold regular">Copyright 2020 by Nobody</p>
-    </footer>
+          <div class="blog-text">
+            <h2>Why Every Developer Should Have A Blog</h2>
+            
+            <small class="courier">
+              <span>Published 2 days ago</span> <span>5 min read</span><span>8 comments</span>
+            </small>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...
+            </p>
+            <p class="m0"><a href="post-3.html">Read more...</a></p>
+          </div>
+          
+        </section>
+
+        <!-- BLOG ITEM -->
+        <section class="blog-item flex">
+
+          <figure>
+            <img src="assets/img/blog/blog-post-thumb-2.jpg" alt="my image">
+          </figure>
+
+          <div class="blog-text">
+            <h2>Why Every Developer Should Have A Blog</h2>
+            
+            <small class="courier">
+              <span>Published 2 days ago</span> <span>5 min read</span><span>8 comments</span>
+            </small>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...
+            </p>
+            <p class="m0"><a href="post-3.html">Read more...</a></p>
+          </div>
+          
+        </section>
+
+        <!-- BLOG ITEM -->
+        <section class="blog-item flex">
+
+          <figure>
+            <img src="assets/img/blog/blog-post-thumb-3.jpg" alt="my image">
+          </figure>
+
+          <div class="blog-text">
+            <h2>Why Every Developer Should Have A Blog</h2>
+            
+            <small class="courier">
+              <span>Published 2 days ago</span> <span>5 min read</span><span>8 comments</span>
+            </small>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...
+            </p>
+            <p class="m0"><a href="post-3.html">Read more...</a></p>
+          </div>
+          
+        </section>
+
+      </main>
+
+      <footer class="footer center">
+        <p class="courier bold regular">Copyright 2020 by Nobody</p>
+      </footer>
+  
+    </div>
+
   </body>
 
 </html>

@@ -1,10 +1,9 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?upxvwg');
-  src:  url('fonts/icomoon.eot?upxvwg#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?upxvwg') format('truetype'),
-    url('fonts/icomoon.woff?upxvwg') format('woff'),
-    url('fonts/icomoon.svg?upxvwg#icomoon') format('svg');
+  font-family: 'soicons';
+  src:
+    url('fonts/soicons.ttf?ihc9r5') format('truetype'),
+    url('fonts/soicons.woff?ihc9r5') format('woff'),
+    url('fonts/soicons.svg?ihc9r5#soicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +11,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'soicons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -25,24 +24,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tools:before {
-  content: "\e033";
+.icon-arrow-right:before {
+  content: "\e900";
 }
-.icon-circle-compass:before {
-  content: "\e038";
+.icon-user:before {
+  content: "\e901";
 }
-.icon-strategy:before {
-  content: "\e03b";
+.icon-bookmark:before {
+  content: "\e902";
 }
-.icon-globe:before {
-  content: "\e045";
+.icon-home:before {
+  content: "\e903";
 }
-.icon-fire:before {
-  content: "\f06d";
+.icon-codepen:before {
+  content: "\e904";
 }
-.icon-eye:before {
-  content: "\f06e";
+.icon-stack-overflow:before {
+  content: "\e905";
 }
-.icon-globe1:before {
-  content: "\f0ac";
+.icon-github:before {
+  content: "\e906";
+}
+.icon-linkedin:before {
+  content: "\e907";
+}
+.icon-twitter:before {
+  content: "\e908";
 }
